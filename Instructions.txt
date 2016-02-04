@@ -1,0 +1,5 @@
+Current live site example is located at http://tribulationperiod.com/degreeplan
+
+For the files in this folder to work as a live site, you will need to upload all three folders as is onto an active web server with php access.  The css and js folders will need to be one level above the degreeplan folder, as it is now.
+
+There is both a compressed and non-compressed version of the bootstrap.css and the info.js files.  This is so you have the advantage of editing them for updates but keeping a live version that is as small as possible.

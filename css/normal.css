@@ -1,0 +1,170 @@
+html, body {
+    height: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.shadow{
+box-shadow: 5px 5px 5px #888888;
+}
+
+ul, li{
+    list-style-type: none;
+}
+
+body {
+  padding-top: 10px;
+}
+
+
+#sem0{
+    min-height: 100px;
+    width: 85%;
+}
+
+
+.semesterCase {
+    float: left;
+    min-width: 100px; 
+    min-height: 150px;
+    padding: 5px;
+    margin: 5px;
+
+}
+
+.semester {
+    background-color: #ffe8a8;
+    /*    min-height: 200px; */
+    min-height: 195px;
+    width:100%;
+    padding: 5px;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+}
+
+
+.infoBlock {
+/*    background-color: #5ABD83;*/
+    min-height: 100px;
+    /*    width: 390px; */
+    padding: 5px;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+}
+
+
+.course {
+    z-index:10;
+    font-size:80%;
+    background-color: #00533E;
+    cursor: pointer;
+    float: left;
+    color: #F5F5DC;
+    width: 80px;
+    height: 32px;
+    padding: 2px;
+    margin: 2px; 
+    border: 1px solid #000000;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    
+}
+
+
+.courseFiller {
+    float:left;
+    min-width: 18px;
+    min-height: 30px;
+    margin-left: -1px;
+    border-right: 2px solid #000000;
+}
+
+.courseFiller2 {
+	display:none;		
+    width:80px;
+    height: 15px;
+    border-bottom: 1px solid #000000;
+}
+
+
+.courseCategory {
+    float: left;
+    /*width: 180px;*/
+    width: 95%;
+/*    min-width: 180px;*/
+    min-height: 75px;
+    padding: 5px;
+    margin: 5px;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+}
+
+#menu {
+     margin: 0px;
+     width: auto;
+     background-color: #003300;
+     font-size: 14px;
+     font-family: Tahoma, Geneva, sans-serif;
+     font-weight: bold;
+     text-align: left;
+     padding: 5px;
+     border-radius: 8px;
+     -webkit-border-radius: 8px;
+     -moz-border-radius: 8px;
+     -o-border-radius: 8px;
+}
+
+#menu ul {
+     margin: 0;
+     padding: 8px 0;
+     list-style: none;
+     height: auto;
+}
+
+#menu li {
+     display: inline;
+     padding: 8px;
+}
+
+#menu a {
+     color: #FFFFFF;
+     padding: 10px;
+     text-decoration: none;
+}
+
+#menu a:hover {
+     background-color: #FFCE00;
+     color: #000;
+     border-radius: 10px;
+     -webkit-border-radius: 10px;
+     -moz-border-radius: 10px;
+     -o-border-radius: 10px;
+}
+
+#menu li .active {
+     background-color: #1B191B;
+     color: #FFF;
+     border-radius: 10px;
+     -webkit-border-radius: 10px;
+     -moz-border-radius: 10px;
+     -o-border-radius: 10px;
+}
+
+.course:hover {
+  color: #FFCE00;
+  background-color: #FFCE00;
+  border-color: #000;
+}
+
+@font-face {
+    font-family: 'gillsans-italic';
+    src: url('http://tribulationperiod.com/project/gillsans-italic.ttf'); /*URL to font*/
+}
+
+

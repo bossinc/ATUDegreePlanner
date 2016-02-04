@@ -1,0 +1,28 @@
+body {
+  padding-top: 10px;
+}
+
+#courseHolder{
+max-width: 100%;
+min-width: 100%;
+width: 100%;
+
+}
+
+.semesterCase{
+page-break-before: auto;
+page-break-inside: avoid;
+}
+
+#semesterPrinter {
+max-width: 80%;
+min-width: 80%;
+width: 80%;
+}
+
+
+
+
+
+      
+    
