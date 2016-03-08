@@ -1,0 +1,9 @@
+To pull new changes:
+git pull
+
+To push new changes:
+git add .
+git commit -m"message about changes"
+git push
+
+
