@@ -2,7 +2,7 @@
 <?php
 	$submittedValue = "";
 	$value0 = "";
-	$a = array ('cs', 'is', 'it');
+	$a = array ('Computer Science', 'Information Systems', 'Information Technology');
 	if (isset($_POST["FruitList"])) {
 		$submittedValue = $_POST["FruitList"];
 	}
@@ -17,7 +17,7 @@
 <select onChange="location=this.options[this.selectedIndex].value;">
 	<option> </option>
   	<?php for($x = 0; $x < $arrlength; $x++){
-		echo "<option value = \"";
+		echo "<option value = \"DegreePlans/";
 		echo $a[$x];
 		echo "\">";
 		echo $a[$x];

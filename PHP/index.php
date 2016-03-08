@@ -6,9 +6,9 @@
 
 <!-- REDIRECTING STARTS -->
 
-<link rel="canonical" href="degreeplan/cs.php"/>
+<link rel="canonical" href="PHP/DegreePlans/Computer Science.php"/>
 <noscript>
-	<meta http-equiv="refresh" content="0;URL=degreeplan/cs.php">
+	<meta http-equiv="refresh" content="0;PHP/DegreePlans/Computer Science.php">
 </noscript>
 <!--[if lt IE 9]><script type="text/javascript">var IE_fix=true;</script><![endif]-->
 <script type="text/javascript">
