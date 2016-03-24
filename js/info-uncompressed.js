@@ -121,12 +121,14 @@ function RunLoad() {
   addCourses();
 //this is where you move classes from the courses area into there semester on the schedule
   $(function() {
+    var semValue;
     var $drop = $( ".dropHere" );
     $( ".Courses" ).draggable({
       drag: function(){
         $(this).addClass('shadow');
       },
       stop: function(){
+        insertParam($(this).prop('id'),semValue);
         $(this).removeClass('shadow');
       },
       revert: "invalid", // when not dropped, the item will revert back to its initial position
@@ -142,6 +144,7 @@ function RunLoad() {
       accept: ".Courses",
       drop: function( event, ui ) {
         courseMove($(this), ui.draggable);
+        semValue = $(this).prop('id');
         updateAllCourses();	    
       }
     });
@@ -150,6 +153,31 @@ function RunLoad() {
       hoverClass: "ui-state-active"
     });
   });
+
+  function insertParam(key, value)
+  {
+    key = encodeURI(key); value = encodeURI(value);
+
+    var kvp = document.location.search.substr(1).split('&');
+
+    var i=kvp.length; var x; while(i--)
+  {
+    x = kvp[i].split('=');
+
+    if (x[0]==key)
+    {
+      x[1] = value;
+      kvp[i] = x.join('=');
+      break;
+    }
+  }
+
+    if(i<0) {kvp[kvp.length] = [key,value].join('=');}
+
+    //this will reload the page, it's likely better to store this until finished
+    document.location.search = kvp.join('&');
+  }
+
   //end degree section
  //used for the reset function
   $("#menu-newPlan").on("click", function(event) {
