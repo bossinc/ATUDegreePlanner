@@ -2,7 +2,11 @@
 <?php
 	$submittedValue = "";
 	$value0 = "";
-	$a = array ('Computer Science', 'Information Systems', 'Information Technology');
+	$path = /JS/DegreePlans/;
+	$a = array_values (array_filter(scandir($path), function ($file){
+	return !is_dir($file);}));
+	foreach($a as $file){ echo $file;}
+	
 	if (isset($_POST["FruitList"])) {
 		$submittedValue = $_POST["FruitList"];
 	}
