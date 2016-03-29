@@ -2,10 +2,8 @@
 <?php
 	$submittedValue = "";
 	$value0 = "";
-	$path = /JS/DegreePlans/;
-	$a = array_values (array_filter(scandir($path), function ($file){
-	return !is_dir($file);}));
-	foreach($a as $file){ echo $file;}
+	$directory = "/JS/DegreePlans/";
+	$a = scandir($directory);
 	
 	if (isset($_POST["FruitList"])) {
 		$submittedValue = $_POST["FruitList"];
@@ -26,7 +24,9 @@
 		echo "\">";
 		echo $a[$x];
 		echo "</option>";
-		} ?>
+		}
+
+		?>
 </select>
 
 
