@@ -3,10 +3,11 @@
 <?php
 $servername = "localhost";
 $username = "root";
-$password = "";
+$password = "BMDd5qAqs539r6St";
+$database = "degree_planner";
 
 // Create connection
-$conn = new mysqli($servername, $username, $password);
+$conn = new mysqli($servername, $username, $password, $database);
 
 // Check connection
 if ($conn->connect_error) {
@@ -15,7 +16,7 @@ if ($conn->connect_error) {
 echo "Connected successfully";
 
 // sql statement for tables and naming array to hold it in
-$sql = "SELECT COURSE_ID FROM degreeplanner.infos";
+$sql = "SELECT COURSE_ID FROM infos";
 $result = $conn->query($sql);
 $IS = array();
 
