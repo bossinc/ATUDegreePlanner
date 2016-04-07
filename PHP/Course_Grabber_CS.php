@@ -28,15 +28,18 @@ if ($result->num_rows > 0) {
 } else {
 	echo "0 Results";
 }
-// encodes php array so it can be used in javascript
-$json_array = json_encode($CS);
-
 $conn->close();
 
-// fills Computer_Science.js with the contents of the json_array and adds new lines in between
-$json_array_lines = implode($json_array, "/n");
+//encode the array so it can be used in javascript and use regular expressions to format it.
+$json_string = json_encode($CS);
+
+$re = "/.,/";
+$subst = "},\r\n";
+$json_string = preg_replace($re, $subst, $json_string);
+
+// send $json_string contents to listed folder
 $fp = fopen('..\js\DegreePlans\Computer_Science.js', 'w');
-fwrite($fp, print_r($json_array_lines, TRUE));
+fwrite($fp, print_r($json_string, TRUE));
 fclose($fp);
 ?>
 

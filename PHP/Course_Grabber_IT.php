@@ -16,28 +16,31 @@ if ($conn->connect_error) {
 echo "Connected successfully";
 
 // sql statement for tables and naming array to hold it in
-$sql = "SELECT COURSE_ID FROM infos";
+$sql = "SELECT COURSE_ID FROM it";
 $result = $conn->query($sql);
-$IS = array();
+$IT = array();
 
 if ($result->num_rows > 0) {
 		// fill array with results 
 		while($row = $result->fetch_assoc()) {
-			array_push($IS, "Name"=>$row);
+			array_push($IT, $row);
 		}
 } else {
 	echo "0 Results";
 }
-// encodes php array so it can be used in javascript
-$json_array = json_encode($IS);
-
 $conn->close();
+
+//encode the array so it can be used in javascript and use regular expressions to format it.
+$json_string = json_encode($IT);
+
+$re = "/.,/";
+$subst = "},\r\n";
+$json_string = preg_replace($re, $subst, $json_string);
+
+// send $json_string contents to listed folder
+$fp = fopen('..\js\DegreePlans\Information_Technology.js', 'w');
+fwrite($fp, print_r($json_string, TRUE));
+fclose($fp);
 ?>
-
-<script type="text/javascript">var ISObjects =<?php echo $json_array; ?>;</script>
-<script type="text/javascript" src="Information Systems.js">
-//allows file in src area to use variables declared in php file
-</script>
-
 </body>
 </html>
