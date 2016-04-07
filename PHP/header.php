@@ -2,7 +2,9 @@
 <?php
 	$submittedValue = "";
 	$value0 = "";
-	$a = array ('Computer Science', 'Information Systems', 'Information Technology');
+	$directory = "/JS/";
+	$a = scandir($directory);
+	
 	if (isset($_POST["FruitList"])) {
 		$submittedValue = $_POST["FruitList"];
 	}
@@ -22,7 +24,9 @@
 		echo "\">";
 		echo $a[$x];
 		echo "</option>";
-		} ?>
+		}
+
+		?>
 </select>
 
 

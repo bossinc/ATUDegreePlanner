@@ -128,7 +128,9 @@ function RunLoad() {
         $(this).addClass('shadow');
       },
       stop: function(){
-        insertParam($(this).prop('id'),semValue);
+        var courseValue = $(this).prop('id');
+        if(semValue != undefined && semValue != "catAll" && semValue != "sem255")
+          insertParam(courseValue, semValue);
         $(this).removeClass('shadow');
       },
       revert: "invalid", // when not dropped, the item will revert back to its initial position
@@ -145,7 +147,7 @@ function RunLoad() {
       drop: function( event, ui ) {
         courseMove($(this), ui.draggable);
         semValue = $(this).prop('id');
-        updateAllCourses();	    
+        updateAllCourses();
       }
     });
     $drop.not("#sem255").not(".courseCategory").droppable({
@@ -156,21 +158,22 @@ function RunLoad() {
 
   function insertParam(key, value)
   {
-    key = encodeURI(key); value = encodeURI(value);
+    key = encodeURI(key);
+    value = encodeURI(value);
 
     var kvp = document.location.search.substr(1).split('&');
 
     var i=kvp.length; var x; while(i--)
-  {
-    x = kvp[i].split('=');
-
-    if (x[0]==key)
     {
-      x[1] = value;
-      kvp[i] = x.join('=');
-      break;
+      x = kvp[i].split('=');
+
+      if (x[0]==key)
+      {
+        x[1] = value;
+        kvp[i] = x.join('=');
+        break;
+      }
     }
-  }
 
     if(i<0) {kvp[kvp.length] = [key,value].join('=');}
 
@@ -414,17 +417,6 @@ function updateSemesterDates(seasonChange) {
   });                                                                                                                                                                                                             
   updateAllCourses();
 }//end updateSemesterDates
-function fancyCourseMove(sem, course) {
-  sem = sem.prop("id");
-  course = course.prop("id");
-  var node = $("#" + sem);
-  var thisCourse = $("#" + course);
-  thisCourse.css("left","");
-  thisCourse.css("top","");
-  node.append(thisCourse);
-  var semNum = parseSem(sem);
-  thisCourse.prop("sem",semNum);
-}
 
 function courseMove(sem, course) {
   sem = sem.prop("id");
@@ -779,6 +771,24 @@ function NewInfoDisplayPrereq(course){
   }
   return preReqList;
 };
+
+function getCourseLocation(thisCourse){
+  var kvp = document.location.search.substr(1).split('&');
+  var courseID = thisCourse.prop('id');
+  var semID = 255;
+  var i = kvp.length; var x; while(i--){
+    x = kvp[i].split('=sem');
+
+    if (x[0]==courseID)
+    {
+      semID = x[1];
+      break;
+    }
+  }
+  //insertParam(semID,semID);
+  
+  courseMove($('#sem' + semID), thisCourse);
+}
 // This is where classes are added from the array to the class area
 function addCourses() {
   $("#addExtraCourse").click(function() {
@@ -835,7 +845,7 @@ function addCourses() {
     }
     asd += '</div>';
     thisCourse.prop("awesomeSemesterDisplay",asd);
-    courseMove($('#sem255'), thisCourse);
+    getCourseLocation(thisCourse);
   }
   for (var i = 0; initialCourseArray[i] != ""; i++){
     var theInfo = initialCourseArray[i];		

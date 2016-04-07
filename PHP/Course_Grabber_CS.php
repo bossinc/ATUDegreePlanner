@@ -31,9 +31,19 @@ if ($result->num_rows > 0) {
 // encodes php array so it can be used in javascript
 $json_array = json_encode($CS);
 
+<<<<<<< HEAD:PHP/Course Grabber CS.php
 $conn->close()
 
 
+=======
+$conn->close();
+
+// fills Computer_Science.js with the contents of the json_array and adds new lines in between
+$json_array_lines = implode($json_array, "/n");
+$fp = fopen('..\js\DegreePlans\Computer_Science.js', 'w');
+fwrite($fp, print_r($json_array_lines, TRUE));
+fclose($fp);
+>>>>>>> ba70da6d5c579b5b34df183bc175b6851c4103b0:PHP/Course_Grabber_CS.php
 ?>
 
 
