@@ -20,6 +20,7 @@ $sql = "SELECT COURSE_ID FROM infos";
 $result = $conn->query($sql);
 $IS = array();
 
+// fill array IS
 if ($result->num_rows > 0) {
 		// fill array with results 
 		while($row = $result->fetch_assoc()) {
@@ -41,6 +42,6 @@ $json_string = preg_replace($re, $subst, $json_string);
 $fp = fopen('..\js\DegreePlans\Information_Systems.js', 'w');
 fwrite($fp, print_r($json_string, TRUE));
 fclose($fp);
-
+?>
 </body>
 </html>

@@ -20,6 +20,7 @@ $sql = "SELECT COURSE_ID FROM it";
 $result = $conn->query($sql);
 $IT = array();
 
+// fill array IT
 if ($result->num_rows > 0) {
 		// fill array with results 
 		while($row = $result->fetch_assoc()) {
