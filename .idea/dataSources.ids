@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="MySQL - degree_planner@localhost" uuid="aed53b60-1264-48c2-9fc2-1532bc7f8c94">
+    <database-info product="MySQL" version="5.5.5-10.1.10-MariaDB" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower"/>
+    <database-model serializer="dbm" rdbms="MYSQL" format-version="2.5">
+      <schema id="1" name="degree_planner"/>
+      <table id="2" parent="1" name="cs"/>
+      <table id="3" parent="1" name="infos"/>
+      <table id="4" parent="1" name="it"/>
+      <column id="5" parent="2" name="COURSE_ID">
+        <mandatory>1</mandatory>
+        <data-type>varchar(20)</data-type>
+      </column>
+      <column id="6" parent="2" name="SUGGESTED_SEM">
+        <mandatory>1</mandatory>
+        <data-type>varchar(20)</data-type>
+      </column>
+      <column id="7" parent="3" name="COURSE_ID">
+        <mandatory>1</mandatory>
+        <data-type>varchar(20)</data-type>
+      </column>
+      <column id="8" parent="3" name="SUGGESTED_SEM">
+        <mandatory>1</mandatory>
+        <data-type>varchar(20)</data-type>
+      </column>
+      <column id="9" parent="4" name="COURSE_ID">
+        <mandatory>1</mandatory>
+        <data-type>varchar(20)</data-type>
+      </column>
+      <column id="10" parent="4" name="SUGGESTED_SEM">
+        <mandatory>1</mandatory>
+        <data-type>varchar(20)</data-type>
+      </column>
+    </database-model>
+  </data-source>
+</component>
