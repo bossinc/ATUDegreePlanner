@@ -28,6 +28,9 @@ if ($result->num_rows > 0) {
 } else {
 	echo "0 Results";
 }
+// encodes php array so it can be used in javascript
+$json_array = json_encode($CS);
+
 $conn->close();
 
 //encode the array so it can be used in javascript and use regular expressions to format it.
