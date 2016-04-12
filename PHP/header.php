@@ -2,7 +2,7 @@
 <?php
 	$submittedValue = "";
 	$value0 = "";
-	$directory = "/JS/";
+	$directory = "../JS/";
 	$a = scandir($directory);
 	
 	if (isset($_POST["FruitList"])) {
