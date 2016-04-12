@@ -2,9 +2,27 @@
 <?php
 	$submittedValue = "";
 	$value0 = "";
+<<<<<<< HEAD
 	$directory = "../JS/";
 	$a = scandir($directory);
 	
+=======
+	$a=drawArray(new DirectoryIterator("../JS/DegreePlans/")); 
+
+	function drawArray(DirectoryIterator $directory)
+	{
+		$result=array();
+		foreach($directory as $object)
+		{
+			if($object->isFile())
+			{
+				$result[]=$object->getBasename('.js');
+			}
+    }
+    return $result;
+}
+
+>>>>>>> d7939c70308187083fa8bbc01bf8cc483fbc2056
 	if (isset($_POST["FruitList"])) {
 		$submittedValue = $_POST["FruitList"];
 	}
