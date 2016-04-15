@@ -2,11 +2,8 @@
 <?php
 	$submittedValue = "";
 	$value0 = "";
-<<<<<<< HEAD
 	$directory = "../JS/";
 	$a = scandir($directory);
-	
-=======
 	$a=drawArray(new DirectoryIterator("../JS/DegreePlans/")); 
 
 	function drawArray(DirectoryIterator $directory)
@@ -22,7 +19,6 @@
     return $result;
 }
 
->>>>>>> d7939c70308187083fa8bbc01bf8cc483fbc2056
 	if (isset($_POST["FruitList"])) {
 		$submittedValue = $_POST["FruitList"];
 	}
@@ -34,12 +30,13 @@
 </style>
 <form name="DropDown">
 <div id="menu">
-<select onChange="location=this.options[this.selectedIndex].value;">
+<select id="degreeList" onChange="changeDegreePlan()">
 	<option> </option>
+	<script type="text/javascript">
+		resetButton();
+	</script>
   	<?php for($x = 0; $x < $arrlength; $x++){
-		echo "<option value = \"DegreePlans/";
-		echo $a[$x];
-		echo "\">";
+		echo "<option>";
 		echo $a[$x];
 		echo "</option>";
 		}

@@ -1,6 +1,6 @@
 var initialCourseArray = new Array() 
  initialCourseArray =  [{"COURSE_ID":"ENGL 1013"},
-{"COURSE_ID":"FAH1"},
+{"COURSE_ID":"CSCSCSCS"},
 {"COURSE_ID":"USHG1"},
 {"COURSE_ID":"TECH 1001"},
 {"COURSE_ID":"COMS 1403"},

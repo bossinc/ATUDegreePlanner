@@ -9,6 +9,7 @@ var theYear = 2012;
 var HiddenSemestersArray = new Array;
 var ULElist = new Array;
 var popup = 0;
+var CourseElements = new Array;
 window.onload = RunLoad;
 
 function setPlanStatus(status)
@@ -791,28 +792,11 @@ function getCourseLocation(thisCourse){
 }
 // This is where classes are added from the array to the class area
 function addCourses() {
-  $("#addExtraCourse").click(function() {
-    $("#catEXTRA").append(msg);
-    var thisCourse = $("#extraCourse"+_extraCourseCounter);
-    drawCourse(thisCourse);
-    updateAllCourses();
+  for(var i =0; i < CourseElements.length; i++){
+    CourseElements.pop();
+  }
+  CourseElements = new Array;
 
-    $( ".extraCourse" ).draggable({
-      drag: function(){
-        $(this).addClass('shadow');
-      },
-      stop: function(){
-        $(this).removeClass('shadow');
-      },
-      revert: "invalid", // when not dropped, the item will revert back to its initial position
-      revertDuration: '200',
-      scroll: 'true',
-      delay: '100',
-      containment: "#dragContainer",
-      cursor: "move",
-      stack: ".Courses"
-    });
-  });
   for (var i = 0; initialCourseArray[i] != ""; i++){
     var theInfo = initialCourseArray[i];
     var msg = " <li class='course Courses' id="+theInfo['name']+"></li>";
@@ -846,10 +830,13 @@ function addCourses() {
     asd += '</div>';
     thisCourse.prop("awesomeSemesterDisplay",asd);
     getCourseLocation(thisCourse);
+    CourseElements.push(thisCourse);
   }
-  for (var i = 0; initialCourseArray[i] != ""; i++){
-    var theInfo = initialCourseArray[i];
-    var thisCourse = $("#"+initialCourseArray[i]['name']);
+  //for (var i = 0; initialCourseArray[i] != ""; i++){
+  for  (var i = 0; i < CourseElements.length; i++){
+    //var theInfo = initialCourseArray[i];
+   // var thisCourse = $("#"+initialCourseArray[i]['name']);
+    var thisCourse = CourseElements[i];
     //create 'display info' functionality
     {
       updateDisplayInfo(thisCourse);
@@ -1001,4 +988,19 @@ function sortCategories(){
       return $(a).prop("id") > $(b).prop("id") ? 1 : -1;
     });
   }// end sortCat
+}
+
+//Change degree plans
+function changeDegreePlan()
+{
+  var degreeList = document.getElementById("degreeList");
+  var dp = degreeList.options[degreeList.selectedIndex].text + ".js";
+  var imported = document.createElement('script');
+  imported.src = "../JS/DegreePlans/" + dp;
+  document.head.appendChild(imported);
+  for(var i =0; i < CourseElements.length; i++){
+    CourseElements[i].html("");
+    //CourseElements[i].prop();
+  }
+  CourseElements = new Array;
 }
