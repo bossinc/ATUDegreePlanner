@@ -124,13 +124,13 @@ function RunLoad() {
   $(function() {
     var semValue;
     var $drop = $( ".dropHere" );
-    $( ".Courses" ).draggable({
+    $( ".Course" ).draggable({
       drag: function(){
         $(this).addClass('shadow');
       },
       stop: function(){
         var courseValue = $(this).prop('id');
-        if(semValue != undefined && semValue != "catAll" && semValue != "sem255")
+        if(semValue != undefined && semValue != "catAll")
           insertParam(courseValue, semValue);
         $(this).removeClass('shadow');
       },
@@ -140,21 +140,18 @@ function RunLoad() {
       delay: '100',
       containment: "#dragContainer",
       cursor: "move",
-      stack: ".Courses"
+      stack: ".Course"
     });
     // dropZones accept li elements
     $drop.droppable({
-      accept: ".Courses",
+      accept: ".Course",
       drop: function( event, ui ) {
         courseMove($(this), ui.draggable);
         semValue = $(this).prop('id');
         updateAllCourses();
       }
     });
-    $drop.not("#sem255").not(".courseCategory").droppable({
-      activeClass: "ui-state-hover",
-      hoverClass: "ui-state-active"
-    });
+
   });
 
   function insertParam(key, value)
@@ -299,10 +296,10 @@ function addSemester() {
 }//end addsemester
 function removeSemester() {
   if (_semesterCounter > 1) {
-    while ($("#semesterContainer > .semesterCase > .semester").last().children('.Courses').length > 0) {
-      $("#sem255").append($("#semesterContainer > .semesterCase > .semester >.Courses").last());
+    while ($("#semesterContainer > .semesterCase > .semester").last().children('.Course').length > 0) {
+      $("#sem255").append($("#semesterContainer > .semesterCase > .semester >.Course").last());
     }
-    $("#sem255 >  .Courses").prop("sem", 255);
+    $("#sem255 >  .Course").prop("sem", 255);
     $("#sembox > .btn").each(function() {
       if (($(this).attr("id")) == ("semButt" + _semesterCounter))
         $(this).hide('drop', function() {$(this).remove(); });
@@ -411,7 +408,7 @@ function updateSemesterDates(seasonChange) {
     var theHide = $("#sem" + semNum + "hide");
     var theSem =  $("#sem" + semNum);
     if (seasonChange == true){
-      if ($(this).attr("mySeason") == "Summer" && theSem.children(".Courses").length == 0 && semNum != 1){
+      if ($(this).attr("mySeason") == "Summer" && theSem.children(".Course").length == 0 && semNum != 1){
         theHide.trigger('click');
       }
     }
@@ -450,11 +447,11 @@ function resetButton() {
     $(this).prop("kids",0);
   });
 
-  $(".Courses").each(function() {
+  $(".Course").each(function() {
     $("#catAll").append(this);
   });
 
-  $(".Courses").prop("sem", 255);
+  $(".Course").prop("sem", 255);
 
   while (_semesterCounter < 11) {
     addSemester();
@@ -476,11 +473,11 @@ function resetButton() {
 
 function updateAllCourses() {
 
-  $("#sem255 >  .Courses").each(function() {
+  $("#sem255 >  .Course").each(function() {
     $("#catAll").append(this);
   });
 
-  $(".courseCategory >  .Courses").each(function() {
+  $(".courseCategory >  .Course").each(function() {
     $(this).prop("sem",255);
     $(this).removeClass("badULE");
     $(this).removeClass("badSeason");
@@ -497,7 +494,7 @@ function updateAllCourses() {
   for (var i = 0; i <= _semesterCounter; i++) {
     var theSem = "#sem" + (i);
     var totalHours = 0;
-    $(theSem + " > .Courses").each(function() {
+    $(theSem + " > .Course").each(function() {
       totalHours += $(this).prop("hours");
     });
     var theSemHours = ("#semHours" + (i));
@@ -520,14 +517,14 @@ function updateAllCourses() {
     // semester length
     // this next section alters the height of the semesters based on how many courses they contain
     var theSem = "#sem" + i;
-    var theKids = $(theSem + " .Courses").length;
+    var theKids = $(theSem + " .Course").length;
     $(theSem).prop("kids", theKids);
     // if there's more than 5 courses in a semester, increase the height accordingly
   }
   //end height adjustment
   //makes size adjustments for the semester columns depending on the number of classes added
   $(".semester").not("#sem0").each(function(index) {
-    var theKids = ($("#"+$(this).prop('id')+ " .Courses").length);
+    var theKids = ($("#"+$(this).prop('id')+ " .Course").length);
     if (theKids > 5) {
       $(this).css("width","182px");
     } else {
@@ -799,7 +796,7 @@ function addCourses() {
 
   for (var i = 0; initialCourseArray[i] != ""; i++){
     var theInfo = initialCourseArray[i];
-    var msg = " <li class='course Courses' id="+theInfo['name']+"></li>";
+    var msg = " <li class='Course' id="+theInfo['name']+"></li>";
     $("#sem666").append(msg);
     //working here to add 'ors' to course prereqs, test phsx 313, then apply to others
     var thisCourse = $("#"+initialCourseArray[i]['name']);
