@@ -2,7 +2,23 @@
 <?php
 	$submittedValue = "";
 	$value0 = "";
-	$a = array ('Computer Science', 'Information Systems', 'Information Technology');
+	$directory = "../JS/";
+	$a = scandir($directory);
+	$a=drawArray(new DirectoryIterator("../JS/DegreePlans/")); 
+
+	function drawArray(DirectoryIterator $directory)
+	{
+		$result=array();
+		foreach($directory as $object)
+		{
+			if($object->isFile())
+			{
+				$result[]=$object->getBasename('.js');
+			}
+    }
+    return $result;
+}
+
 	if (isset($_POST["FruitList"])) {
 		$submittedValue = $_POST["FruitList"];
 	}
@@ -14,15 +30,18 @@
 </style>
 <form name="DropDown">
 <div id="menu">
-<select onChange="location=this.options[this.selectedIndex].value;">
+<select id="degreeList" onChange="changeDegreePlan()">
 	<option> </option>
+	<script type="text/javascript">
+		resetButton();
+	</script>
   	<?php for($x = 0; $x < $arrlength; $x++){
-		echo "<option value = \"DegreePlans/";
-		echo $a[$x];
-		echo "\">";
+		echo "<option>";
 		echo $a[$x];
 		echo "</option>";
-		} ?>
+		}
+
+		?>
 </select>
 
 
