@@ -1,5 +1,3 @@
-<html>
-<body>
 <?php
 $servername = "localhost";
 $username = "root";
@@ -48,5 +46,3 @@ $fp = fopen('..\js\DegreePlans\Information_Technology.js', 'w');
 fprintf($fp, "%s \n %s %s;",$first_string,$second_string,$json_string);
 fclose($fp);
 ?>
-</body>
-</html>
