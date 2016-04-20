@@ -9,7 +9,6 @@ var theYear = 2012;
 var HiddenSemestersArray = new Array;
 var ULElist = new Array;
 var popup = 0;
-var CourseElements = new Array;
 window.onload = RunLoad;
 
 function setPlanStatus(status)
@@ -31,7 +30,7 @@ function checkStatus(){
   var myStatus = new Array;
   myStatus[0] = 'Complete';
 
-  $(".course").each(function(index) {
+  $(".Course").each(function(index) {
     if ($(this).prop('sem') == 255) {
       myStatus[0] = 'Not Complete';
       myStatus.push('Not_All_Courses_Placed');
@@ -99,11 +98,11 @@ function RunLoad() {
   });
 
   $("#info_btn").click(function()
-      {
-        var thisCourse = $("#"+$(this).prop('value'));
-        $("#infobox").html(thisCourse.prop('displayInfo'));
-        activatePreqReqButtons(thisCourse);
-      });
+  {
+    var thisCourse = $("#"+$(this).prop('value'));
+    $("#infobox").html(thisCourse.prop('displayInfo'));
+    activatePreqReqButtons(thisCourse);
+  });
 
   // This is the transfer credit area
   $("#prevHours").attr("title", "Credit hours");
@@ -124,14 +123,12 @@ function RunLoad() {
   $(function() {
     var semValue;
     var $drop = $( ".dropHere" );
-    $( ".Course" ).draggable({
+    $( ".Courses" ).draggable({
       drag: function(){
         $(this).addClass('shadow');
       },
       stop: function(){
         var courseValue = $(this).prop('id');
-        if(semValue != undefined && semValue != "catAll")
-          insertParam(courseValue, semValue);
         $(this).removeClass('shadow');
       },
       revert: "invalid", // when not dropped, the item will revert back to its initial position
@@ -140,49 +137,30 @@ function RunLoad() {
       delay: '100',
       containment: "#dragContainer",
       cursor: "move",
-      stack: ".Course"
+      stack: ".Courses"
     });
     // dropZones accept li elements
     $drop.droppable({
-      accept: ".Course",
+      accept: ".Courses",
       drop: function( event, ui ) {
         courseMove($(this), ui.draggable);
         semValue = $(this).prop('id');
         updateAllCourses();
       }
     });
-
+    $drop.not("#sem255").not(".courseCategory").droppable({
+      activeClass: "ui-state-hover",
+      hoverClass: "ui-state-active"
+    });
   });
 
-  function insertParam(key, value)
-  {
-    key = encodeURI(key);
-    value = encodeURI(value);
-
-    var kvp = document.location.search.substr(1).split('&');
-
-    var i=kvp.length; var x; while(i--)
-    {
-      x = kvp[i].split('=');
-
-      if (x[0]==key)
-      {
-        x[1] = value;
-        kvp[i] = x.join('=');
-        break;
-      }
-    }
-
-    if(i<0) {kvp[kvp.length] = [key,value].join('=');}
-
-    //this will reload the page, it's likely better to store this until finished
-    document.location.search = kvp.join('&');
-  }
-
   //end degree section
- //used for the reset function
+  //used for the reset function
   $("#menu-newPlan").on("click", function(event) {
     resetButton();
+  });
+  $("#menu-savePlan").on("click", function(event) {
+    generateSavingString();
   });
   //end dropdown menu
   //add/remove semesters and change date buttons
@@ -296,10 +274,10 @@ function addSemester() {
 }//end addsemester
 function removeSemester() {
   if (_semesterCounter > 1) {
-    while ($("#semesterContainer > .semesterCase > .semester").last().children('.Course').length > 0) {
-      $("#sem255").append($("#semesterContainer > .semesterCase > .semester >.Course").last());
+    while ($("#semesterContainer > .semesterCase > .semester").last().children('.Courses').length > 0) {
+      $("#sem255").append($("#semesterContainer > .semesterCase > .semester >.Courses").last());
     }
-    $("#sem255 >  .Course").prop("sem", 255);
+    $("#sem255 >  .Courses").prop("sem", 255);
     $("#sembox > .btn").each(function() {
       if (($(this).attr("id")) == ("semButt" + _semesterCounter))
         $(this).hide('drop', function() {$(this).remove(); });
@@ -408,7 +386,7 @@ function updateSemesterDates(seasonChange) {
     var theHide = $("#sem" + semNum + "hide");
     var theSem =  $("#sem" + semNum);
     if (seasonChange == true){
-      if ($(this).attr("mySeason") == "Summer" && theSem.children(".Course").length == 0 && semNum != 1){
+      if ($(this).attr("mySeason") == "Summer" && theSem.children(".Courses").length == 0 && semNum != 1){
         theHide.trigger('click');
       }
     }
@@ -417,6 +395,7 @@ function updateSemesterDates(seasonChange) {
 }//end updateSemesterDates
 
 function courseMove(sem, course) {
+
   sem = sem.prop("id");
   course = course.prop("id");
   var node = $("#" + sem);
@@ -426,6 +405,9 @@ function courseMove(sem, course) {
   node.append(thisCourse);
   var semNum = parseSem(sem);
   thisCourse.prop("sem",semNum);
+
+  if(sem != undefined && sem != "sem255")
+    insertParam(course, sem);
 }
 //takes the semid and returns just the course number
 function parseSem(sem){
@@ -447,11 +429,11 @@ function resetButton() {
     $(this).prop("kids",0);
   });
 
-  $(".Course").each(function() {
+  $(".Courses").each(function() {
     $("#catAll").append(this);
   });
 
-  $(".Course").prop("sem", 255);
+  $(".Courses").prop("sem", 255);
 
   while (_semesterCounter < 11) {
     addSemester();
@@ -459,12 +441,12 @@ function resetButton() {
   while (_semesterCounter > 11) {
     removeSemester();
   }
-  $(".course").each(function(index) {
+  $(".Course").each(function(index) {
     var thisCourse = $(this);
     if (thisCourse.prop('altClass') != null) {
       var otherCourse = $("#"+thisCourse.prop("altClass"));
-      if (thisCourse.prop('sem') != 666) {
-        courseMove($('#sem666'), otherCourse);
+      if (thisCourse.prop("id") != "courseHolder") {
+        courseMove($('#courseHolder'), otherCourse);
       }
     }
   });
@@ -473,11 +455,11 @@ function resetButton() {
 
 function updateAllCourses() {
 
-  $("#sem255 >  .Course").each(function() {
+  $("#sem255 >  .Courses").each(function() {
     $("#catAll").append(this);
   });
 
-  $(".courseCategory >  .Course").each(function() {
+  $(".courseCategory >  .Courses").each(function() {
     $(this).prop("sem",255);
     $(this).removeClass("badULE");
     $(this).removeClass("badSeason");
@@ -494,7 +476,7 @@ function updateAllCourses() {
   for (var i = 0; i <= _semesterCounter; i++) {
     var theSem = "#sem" + (i);
     var totalHours = 0;
-    $(theSem + " > .Course").each(function() {
+    $(theSem + " > .Courses").each(function() {
       totalHours += $(this).prop("hours");
     });
     var theSemHours = ("#semHours" + (i));
@@ -517,14 +499,14 @@ function updateAllCourses() {
     // semester length
     // this next section alters the height of the semesters based on how many courses they contain
     var theSem = "#sem" + i;
-    var theKids = $(theSem + " .Course").length;
+    var theKids = $(theSem + " .Courses").length;
     $(theSem).prop("kids", theKids);
     // if there's more than 5 courses in a semester, increase the height accordingly
   }
   //end height adjustment
   //makes size adjustments for the semester columns depending on the number of classes added
   $(".semester").not("#sem0").each(function(index) {
-    var theKids = ($("#"+$(this).prop('id')+ " .Course").length);
+    var theKids = ($("#"+$(this).prop('id')+ " .Courses").length);
     if (theKids > 5) {
       $(this).css("width","182px");
     } else {
@@ -548,7 +530,7 @@ function updateAllCourses() {
     }
   });
   //detect sequence and season errors
-  $(".course").each(function(index) {
+  $(".Course").each(function(index) {
     thisCourse = $(this);
     thisCourse.prop('title',"");
     if (thisCourse.prop("sem")!= 255){
@@ -563,7 +545,7 @@ function updateAllCourses() {
   sortCategories();
   //display any errors
   broadCastAll()
-    applyPrintClass();
+  applyPrintClass();
   checkStatus();
 }//end UpdateAllCourses
 //This is the message box that shows up on hover when theres an error
@@ -579,7 +561,7 @@ function broadCastAll(){
   }
 }
 function applyPrintClass(){
-  $(".course").not(".badSequence, .badSeason").each(function(){
+  $(".Course").not(".badSequence, .badSeason").each(function(){
     $("#"+$(this).prop('id')+"redErrorGrid").removeClass("printRed");
   });
   $(".badSequence, .badSeason").each(function(){
@@ -592,9 +574,9 @@ function colorErrors(){
   var courseNormal = "#00533E";
   var courseULE = "#6DC6E7";
   var hover = "#FFCE00";
-  $(".course").css("background-color", courseNormal);
-  $(".course:hover").css("background-color", hover);
-  $(".course.ULE").css("background-color", courseULE);
+  $(".Course").css("background-color", courseNormal);
+  $(".Course:hover").css("background-color", hover);
+  $(".Course.ULE").css("background-color", courseULE);
   $(".badSequence").css("background-color", errorRed);
   $(".badSeason").css("background-color", errorRed);
   $(".badULE").css("background-color", errorYellow);
@@ -623,7 +605,7 @@ function checkSeason(thisCourse){
 // used when you are taking classes out of order
 function broadCastOutOfSequence() {
   var msg = "<b>Pre-requisite errors:</b><br>"
-    $("#errorSequence").html("");
+  $("#errorSequence").html("");
   if 	($(".badSequence").length > 0){
     $(".badSequence").each(function() {
       total_errors++;
@@ -637,13 +619,13 @@ function checkULE(thisCourse) {
   var ULEdone = true;
   if (thisCourse.prop("id") == "COMS_TEST" ) {
     for (var i = 0; i < ULElist.length; i++) {
-      if ( ($("#" + ULElist[i]).prop("sem") > thisCourse.prop("sem")) && ($("#"+ULElist[i]).prop("sem") != 666) ) {
+      if ( ($("#" + ULElist[i]).prop("sem") > thisCourse.prop("sem")) && thisCourse.prop("id") == "courseHolder" ) {
         ULEdone = false;
       }
     }
   } else {
     for (var i = 0; i < ULElist.length; i++) {
-      if ( ($("#" + ULElist[i]).prop("sem") >= thisCourse.prop("sem")) && ($("#"+ULElist[i]).prop("sem") != 666) ) {
+      if ( ($("#" + ULElist[i]).prop("sem") >= thisCourse.prop("sem")) && thisCourse.prop("id") == "courseHolder" ) {
         ULEdone = false;
       }
     }
@@ -701,16 +683,16 @@ function checkSequence(thisCourse) {
     }
     var comparedCourse = $("#" + thisCourse.prop("Prereqs")[j]);
     if (comparedCourse.length > 0) {
-    if (thisCourse.prop("sem") <= (comparedCourse.prop("sem") - co)) {
-      outOfOrder = true;
-    }
-    if (outOfOrder == true){
-      if ((thisCourse.prop("sem") != 255 && thisCourse.prop("sem") != 0 && thisCourse.is(":visible"))) {
-        thisCourse.addClass("badSequence");
+      if (thisCourse.prop("sem") <= (comparedCourse.prop("sem") - co)) {
+        outOfOrder = true;
       }
-    } else {
-      thisCourse.removeClass("badSequence");
-    }
+      if (outOfOrder == true){
+        if ((thisCourse.prop("sem") != 255 && thisCourse.prop("sem") != 0 && thisCourse.is(":visible"))) {
+          thisCourse.addClass("badSequence");
+        }
+      } else {
+        thisCourse.removeClass("badSequence");
+      }
     }
     j++;
   }
@@ -732,10 +714,10 @@ function displayPrereqList(course){
         i++;
       } else {
         if ( $("#"+course.prop("Prereqs")[i]).length > 0  ){
-        if ( (course.prop("sem")) <=  ($("#"+course.prop("Prereqs")[i]).prop("sem"))  ){
-          preReqList = (preReqList + " \n" + $("#"+course.prop("Prereqs")[i]).prop('label') );
+          if ( (course.prop("sem")) <=  ($("#"+course.prop("Prereqs")[i]).prop("sem"))  ){
+            preReqList = (preReqList + " \n" + $("#"+course.prop("Prereqs")[i]).prop('label') );
+          }
         }
-      }
         i++;
       }
     }
@@ -750,20 +732,20 @@ function NewInfoDisplayPrereq(course){
   } else {
     var myLength = course.prop("Prereqs").length;
     for (var i = 0; i < myLength-1; i++) {
-               if ( $("#"+course.prop("Prereqs")[i]).length > 0  ){
-      var tempLabel=$("#"+course.prop("Prereqs")[i]).prop('label');
-      var tempID=$("#"+course.prop("Prereqs")[i]).prop('id');
+      if ( $("#"+course.prop("Prereqs")[i]).length > 0  ){
+        var tempLabel=$("#"+course.prop("Prereqs")[i]).prop('label');
+        var tempID=$("#"+course.prop("Prereqs")[i]).prop('id');
 
-      if (course.prop("Prereqs")[i] == 'co') {
-        i++;
-        tempLabel=$("#"+course.prop("Prereqs")[i]).prop('label');
-        tempID=$("#"+course.prop("Prereqs")[i]).prop('id');
+        if (course.prop("Prereqs")[i] == 'co') {
+          i++;
+          tempLabel=$("#"+course.prop("Prereqs")[i]).prop('label');
+          tempID=$("#"+course.prop("Prereqs")[i]).prop('id');
 
-        preReqList = (preReqList + "<button name='preReqButton' value='"+tempID+"'type='button' class='btn btn-default btn-xs'> " + tempLabel  + "(co)</button>");
-      } else {
-        preReqList = (preReqList + "<button name='preReqButton' value='"+tempID+"'type='button' class='btn btn-default btn-xs'> " + tempLabel  + "</button>");
+          preReqList = (preReqList + "<button name='preReqButton' value='"+tempID+"'type='button' class='btn btn-default btn-xs'> " + tempLabel  + "(co)</button>");
+        } else {
+          preReqList = (preReqList + "<button name='preReqButton' value='"+tempID+"'type='button' class='btn btn-default btn-xs'> " + tempLabel  + "</button>");
+        }
       }
-    }
     }
 //    preReqList +='<input type= "checkbox" name="waiver" value="waivers"> Waiver received<br>'
   }
@@ -789,15 +771,32 @@ function getCourseLocation(thisCourse){
 }
 // This is where classes are added from the array to the class area
 function addCourses() {
-  for(var i =0; i < CourseElements.length; i++){
-    CourseElements.pop();
-  }
-  CourseElements = new Array;
+  $("#addExtraCourse").click(function() {
+    $("#catEXTRA").append(msg);
+    var thisCourse = $("#extraCourse"+_extraCourseCounter);
+    drawCourse(thisCourse);
+    updateAllCourses();
 
+    $( ".extraCourse" ).draggable({
+      drag: function(){
+        $(this).addClass('shadow');
+      },
+      stop: function(){
+        $(this).removeClass('shadow');
+      },
+      revert: "invalid", // when not dropped, the item will revert back to its initial position
+      revertDuration: '200',
+      scroll: 'true',
+      delay: '100',
+      containment: "#dragContainer",
+      cursor: "move",
+      stack: ".Courses"
+    });
+  });
   for (var i = 0; initialCourseArray[i] != ""; i++){
     var theInfo = initialCourseArray[i];
-    var msg = " <li class='Course' id="+theInfo['name']+"></li>";
-    $("#sem666").append(msg);
+    var msg = " <li class='Course Courses' id="+theInfo['name']+"></li>";
+    $("#catAll").append(msg);
     //working here to add 'ors' to course prereqs, test phsx 313, then apply to others
     var thisCourse = $("#"+initialCourseArray[i]['name']);
     thisCourse.prop("label",(theInfo['label']));
@@ -827,13 +826,10 @@ function addCourses() {
     asd += '</div>';
     thisCourse.prop("awesomeSemesterDisplay",asd);
     getCourseLocation(thisCourse);
-    CourseElements.push(thisCourse);
   }
-  //for (var i = 0; initialCourseArray[i] != ""; i++){
-  for  (var i = 0; i < CourseElements.length; i++){
-    //var theInfo = initialCourseArray[i];
-   // var thisCourse = $("#"+initialCourseArray[i]['name']);
-    var thisCourse = CourseElements[i];
+  for (var i = 0; initialCourseArray[i] != ""; i++){
+    var theInfo = initialCourseArray[i];
+    var thisCourse = $("#"+initialCourseArray[i]['name']);
     //create 'display info' functionality
     {
       updateDisplayInfo(thisCourse);
@@ -874,15 +870,15 @@ function updateDisplayInfo(thisCourse){
   msg += "<div class='col-sm-6'>";
   msg+= thisCourse.prop("awesomeSemesterDisplay");
   msg += "<div>";
- msg += '<span class="label label-default pull-right">';
- msg += "</span>";
+  msg += '<span class="label label-default pull-right">';
+  msg += "</span>";
   msg += "</div>";
   msg += "</div>";
   msg += "</div>";
   msg += "</div>";
   msg += "<div class='row'>";
   msg += "<div class='col-sm-12'>";
-    msg += "<div>";
+  msg += "<div>";
   msg += '<span class="label label-default1 pull-left">';
   if (thisCourse.prop("ULE") == 0 ){
     msg += "Pre-ULE";
@@ -967,7 +963,7 @@ function drawCourse(thisCourse){
 function sortCategories(){
   sortCat('#catAll');
   function sortCat(catName)    {
-    $(catName + " >  .course").not('.altSorted').sortElements(function(a, b){
+    $(catName + " >  .Course").not('.altSorted').sortElements(function(a, b){
       if ($(a).prop("ULE") == 0  ) {
         $(a).addClass('uleSorted');
       }
@@ -976,10 +972,10 @@ function sortCategories(){
       }
       return $(a).prop("ULE") > $(b).prop("ULE") ? 1 : -1;
     });
-    $(catName + " >  .course").not(".uleSorted").not(".altSorted").sortElements(function(a, b){
+    $(catName + " >  .Course").not(".uleSorted").not(".altSorted").sortElements(function(a, b){
       return $(a).prop("id") > $(b).prop("id") ? 1 : -1;
     });
-    $(catName + " >  .course.uleSorted").sortElements(function(a, b){
+    $(catName + " >  .Course.uleSorted").sortElements(function(a, b){
       $(a).removeClass('uleSorted');
       $(b).removeClass('uleSorted');
       return $(a).prop("id") > $(b).prop("id") ? 1 : -1;
@@ -990,7 +986,8 @@ function sortCategories(){
 //Change degree plans
 function changeDegreePlan()
 {
-  var degreeList = document.getElementById("degreeList");
+  generateSavingString();
+ /* var degreeList = document.getElementById("degreeList");
   var dp = degreeList.options[degreeList.selectedIndex].text + ".js";
   var imported = document.createElement('script');
   imported.src = "../JS/DegreePlans/" + dp;
@@ -999,5 +996,76 @@ function changeDegreePlan()
     CourseElements[i].html("");
     //CourseElements[i].prop();
   }
-  CourseElements = new Array;
+  CourseElements = new Array;*/
+  //document.write("SDAF");
+  generateSavingString();
+}
+
+var paramBuilder = "";
+function insertParam(key, value)
+{
+  key = encodeURI(key);
+  value = encodeURI(value);
+
+  var kvp = paramBuilder.split('&');
+
+  var i=kvp.length;
+  var x;
+  while(i--)
+  {
+    x = kvp[i].split('=');
+
+    if (x[0]==key)
+    {
+      x[1] = value;
+      kvp[i] = x.join('=');
+      break;
+    }
+  }
+
+  if(i<0) {kvp[kvp.length] = [key,value].join('=');}
+
+  paramBuilder = kvp.join('&');
+  //this will reload the page, it's likely better to store this until finished
+  //document.location.search = kvp.join('&');
+  //generateSavingString();
+}
+
+function generateSavingString()
+{
+  var urlString = window.location.href.split("?")[0];
+  document.writeln(urlString + "?" + paramBuilder);
+  //document.location.search = paramBuilder;
+}
+
+function hashCode (s) {
+  var hash = 0,
+      strlen = s.length,
+      i,
+      c;
+  if ( strlen === 0 ) {
+    return hash;
+  }
+  for ( i = 0; i < strlen; i++ ) {
+    c = s.charCodeAt( i );
+    hash = ((hash << 5) - hash) + c;
+    //hash = hash & hash; // Convert to 32bit integer
+  }
+  return hash;
+}
+
+function unhashCode(s){
+  var hash = 0,
+      strlen = s.length,
+      i,
+      c;
+  if ( strlen === 0 ) {
+    return hash;
+  }
+  for ( i = 0; i < strlen; i++ ) {
+    c = s.charCodeAt( i );
+    hash = ((hash >> 5) + hash) - c;
+    //hash = hash & hash; // Convert to 32bit integer
+  }
+  return hash;
 }

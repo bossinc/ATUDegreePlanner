@@ -1,17 +1,23 @@
-var Course = function(info){
+function Course(info){
     this.id = info.name;
     this.seasonRestrict = info.seasonRestrict;
     this.hours = info.hours;
     this.prereqs = info.Prereqs;
     this.label = info.label;
-    this.course = CreateCourse();
+    this.course = this.CreateCourse();
 };
 
-CreateCourse = function()
+Course.prototype.CreateCourse = function()
 {
-    var course;
+    var listElement = document.createElement('li');
+    var node = document.createTextNode('');
+    listElement.className += " Course";
+    listElement.setAttribute("id", this.id);
+    listElement.appendChild(node);
+    //listE
 
-    return course;
+    $("#CourseCollection").append(listElement);
+    ($("#"+this.id)).prop("label",(this.label));
 };
 
 Course.prototype.DragCourse = $(function() {

@@ -4,10 +4,10 @@
     <div class="modal-content">
       <div class="modal-header">
 	<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-	<h4 class="modal-title" id="wipePlanModalLabel">Want to rest your plan?</h4>
+	<h4 class="modal-title" id="wipePlanModalLabel">Reset</h4>
       </div>
       <div class="modal-body">
-<p>If you click "Yes", you are about to start over the current degree plan. </p> 
+<p>Do you want to reset your current degree plan? </p>
 
       </div>
 <div class="modal-footer">
@@ -42,3 +42,26 @@
     </div>
   </div>
 </div>
+
+
+<!-- This is where the dialog for the save option is located at-->
+<div class="modal fade" id="savePlanModal" tabindex="-1" role="dialog" aria-labelledby="wipePlanModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="wipePlanModalLabel">Save</h4>
+            </div>
+            <div class="modal-body">
+                <p></p>
+
+            </div>
+            <div class="modal-footer">
+                <a class="btn btn-default" data-dismiss="modal">No</a>
+                <a class="btn btn-default" id= "menu-savePlan" data-dismiss="modal">Yes</a>
+
+            </div>
+        </div>
+    </div>
+</div>
+

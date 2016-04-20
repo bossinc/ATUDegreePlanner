@@ -15,7 +15,11 @@
 	<script src="../JS/bootstrap.min.js"></script>
 	<!-- the sorting system used -->
 	<script src="../JS/tinySort.js"></script>
-	<script src="../JS/info-uncompressed.js"></script>
+	<script src="../JS/info-uncompressed.js"></script>-->
+	<!--<script src = "../JS/DegreePlans/Test%20Degree.js"></script>
+	<script src = "../JS/Course.js"></script>
+	<script src="../JS/CourseManager.js"></script>
+	<script src="../JS/main.js"></script>-->
 </head>
 <body>
 <?php include 'header.php';?>

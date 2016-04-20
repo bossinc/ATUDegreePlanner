@@ -2,10 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fb7d599f-c580-4bca-a883-9e7a8cd46f6d" name="Default" comment="">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/JS/ClassMovementManager.js" afterPath="$PROJECT_DIR$/JS/Course.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/JS/CreatingClassesManager.js" afterPath="$PROJECT_DIR$/JS/CourseManager.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/normal.css" afterPath="$PROJECT_DIR$/css/normal.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JS/Course.js" afterPath="$PROJECT_DIR$/JS/Course.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JS/CourseManager.js" afterPath="$PROJECT_DIR$/JS/CourseManager.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JS/info-uncompressed.js" afterPath="$PROJECT_DIR$/JS/info-uncompressed.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PHP/courses.php" afterPath="$PROJECT_DIR$/PHP/courses.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PHP/header.php" afterPath="$PROJECT_DIR$/PHP/header.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PHP/index.php" afterPath="$PROJECT_DIR$/PHP/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PHP/menu.php" afterPath="$PROJECT_DIR$/PHP/menu.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PHP/semesters.php" afterPath="$PROJECT_DIR$/PHP/semesters.php" />
     </list>
     <ignored path="ATUDegreePlanner.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -26,20 +31,30 @@
     <favorites_list name="ATUDegreePlanner" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5270758">
+    <splitter split-orientation="horizontal" split-proportion="0.37037036">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="info-uncompressed.js" pinned="false" current-in-tab="false">
+          <file leaf-file-name="info-uncompressed.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/JS/info-uncompressed.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="209">
-                  <caret line="796" column="47" selection-start-line="796" selection-start-column="47" selection-end-line="796" selection-end-column="47" />
+                <state relative-caret-position="126">
+                  <caret line="402" column="28" selection-start-line="402" selection-start-column="28" selection-end-line="402" selection-end-column="28" />
                   <folding>
                     <element signature="n#!!doc" expanded="true" />
-                    <marker date="1460919352919" expanded="true" signature="30639:30674" placeholder="..." />
-                    <marker date="1460919352919" expanded="true" signature="30848:30864" placeholder="..." />
-                    <marker date="1460919352919" expanded="true" signature="30955:30966" placeholder="..." />
+                    <marker date="1461187495626" expanded="true" signature="30711:30746" placeholder="..." />
+                    <marker date="1461187495626" expanded="true" signature="30920:30936" placeholder="..." />
+                    <marker date="1461187495626" expanded="true" signature="31027:31038" placeholder="..." />
                   </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/JS/main.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="102">
+                  <caret line="6" column="1" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
+                  <folding />
                 </state>
               </provider>
             </entry>
@@ -47,18 +62,18 @@
           <file leaf-file-name="CourseManager.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/JS/CourseManager.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="306">
-                  <caret line="18" column="35" selection-start-line="18" selection-start-column="35" selection-end-line="18" selection-end-column="35" />
+                <state relative-caret-position="119">
+                  <caret line="7" column="68" selection-start-line="7" selection-start-column="68" selection-end-line="7" selection-end-column="68" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="Course.js" pinned="false" current-in-tab="true">
+          <file leaf-file-name="Course.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/JS/Course.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="221">
-                  <caret line="13" column="18" selection-start-line="13" selection-start-column="18" selection-end-line="13" selection-end-column="18" />
+                <state relative-caret-position="272">
+                  <caret line="16" column="6" selection-start-line="16" selection-start-column="6" selection-end-line="16" selection-end-column="6" />
                   <folding />
                 </state>
               </provider>
@@ -67,8 +82,30 @@
           <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/PHP/index.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="153">
-                  <caret line="9" column="35" selection-start-line="9" selection-start-column="35" selection-end-line="9" selection-end-column="35" />
+                <state relative-caret-position="408">
+                  <caret line="24" column="21" selection-start-line="24" selection-start-column="21" selection-end-line="24" selection-end-column="21" />
+                  <folding>
+                    <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="courseinfo.php" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/PHP/courseinfo.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="102">
+                  <caret line="6" column="56" selection-start-line="6" selection-start-column="56" selection-end-line="6" selection-end-column="56" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="semesters.php" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/PHP/semesters.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="583">
+                  <caret line="66" column="29" selection-start-line="66" selection-start-column="29" selection-end-line="66" selection-end-column="29" />
                   <folding />
                 </state>
               </provider>
@@ -77,8 +114,18 @@
           <file leaf-file-name="header.php" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/PHP/header.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="408">
-                  <caret line="36" column="9" selection-start-line="36" selection-start-column="9" selection-end-line="36" selection-end-column="9" />
+                <state relative-caret-position="524">
+                  <caret line="49" column="12" selection-start-line="49" selection-start-column="12" selection-end-line="49" selection-end-column="25" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="menu.php" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/PHP/menu.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="374">
+                  <caret line="49" column="35" selection-start-line="49" selection-start-column="35" selection-end-line="49" selection-end-column="35" />
                   <folding />
                 </state>
               </provider>
@@ -87,8 +134,8 @@
           <file leaf-file-name="courses.php" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/PHP/courses.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="68">
-                  <caret line="4" column="15" selection-start-line="4" selection-start-column="15" selection-end-line="4" selection-end-column="15" />
+                <state relative-caret-position="34">
+                  <caret line="2" column="42" selection-start-line="2" selection-start-column="42" selection-end-line="2" selection-end-column="42" />
                   <folding />
                 </state>
               </provider>
@@ -101,13 +148,13 @@
           <file leaf-file-name="info-uncompressed.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/JS/info-uncompressed.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="226">
-                  <caret line="801" column="41" selection-start-line="801" selection-start-column="41" selection-end-line="801" selection-end-column="41" />
+                <state relative-caret-position="298">
+                  <caret line="1036" column="50" selection-start-line="1036" selection-start-column="50" selection-end-line="1036" selection-end-column="50" />
                   <folding>
                     <element signature="n#!!doc" expanded="true" />
-                    <marker date="1460919352919" expanded="true" signature="30639:30674" placeholder="..." />
-                    <marker date="1460919352919" expanded="true" signature="30848:30864" placeholder="..." />
-                    <marker date="1460919352919" expanded="true" signature="30955:30966" placeholder="..." />
+                    <marker date="1461187495626" expanded="true" signature="30711:30746" placeholder="..." />
+                    <marker date="1461187495626" expanded="true" signature="30920:30936" placeholder="..." />
+                    <marker date="1461187495626" expanded="true" signature="31027:31038" placeholder="..." />
                   </folding>
                 </state>
               </provider>
@@ -116,8 +163,8 @@
           <file leaf-file-name="normal.css" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/css/normal.css">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="799">
-                  <caret line="47" column="27" selection-start-line="47" selection-start-column="27" selection-end-line="47" selection-end-column="27" />
+                <state relative-caret-position="0">
+                  <caret line="93" column="15" selection-start-line="93" selection-start-column="15" selection-end-line="93" selection-end-column="15" />
                   <folding />
                 </state>
               </provider>
@@ -146,8 +193,8 @@
           <file leaf-file-name="Test Degree.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/JS/DegreePlans/Test Degree.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="102">
-                  <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+                <state relative-caret-position="51">
+                  <caret line="3" column="15" selection-start-line="3" selection-start-column="15" selection-end-line="3" selection-end-column="15" />
                   <folding />
                 </state>
               </provider>
@@ -171,11 +218,8 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/PHP/DegreePlans/Computer Science.php" />
-        <option value="$PROJECT_DIR$/PHP/courses.php" />
         <option value="$PROJECT_DIR$/PHP/Computer Science.php" />
         <option value="$PROJECT_DIR$/PHP/CourseInfoGrabber.php" />
-        <option value="$PROJECT_DIR$/PHP/index.php" />
-        <option value="$PROJECT_DIR$/PHP/header.php" />
         <option value="$PROJECT_DIR$/JS/DegreePlans/Computer_Science.js" />
         <option value="$PROJECT_DIR$/JS/DegreePlans/Information_Systems.js" />
         <option value="$PROJECT_DIR$/JS/DegreePlans/Information_Technology.js" />
@@ -183,11 +227,17 @@
         <option value="$PROJECT_DIR$/JS/ManageClasses.js" />
         <option value="$PROJECT_DIR$/JS/ClassMovementManager.js" />
         <option value="$PROJECT_DIR$/JS/oldCodeClasses.js" />
-        <option value="$PROJECT_DIR$/JS/CourseManager.js" />
         <option value="$PROJECT_DIR$/JS/DegreePlans/Test Degree.js" />
-        <option value="$PROJECT_DIR$/JS/info-uncompressed.js" />
         <option value="$PROJECT_DIR$/css/normal.css" />
+        <option value="$PROJECT_DIR$/PHP/courses.php" />
+        <option value="$PROJECT_DIR$/JS/main.js" />
+        <option value="$PROJECT_DIR$/PHP/semesters.php" />
+        <option value="$PROJECT_DIR$/JS/CourseManager.js" />
         <option value="$PROJECT_DIR$/JS/Course.js" />
+        <option value="$PROJECT_DIR$/PHP/index.php" />
+        <option value="$PROJECT_DIR$/PHP/header.php" />
+        <option value="$PROJECT_DIR$/PHP/menu.php" />
+        <option value="$PROJECT_DIR$/JS/info-uncompressed.js" />
       </list>
     </option>
   </component>
@@ -201,10 +251,10 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" interpreter_name="PHP" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1382" />
-    <option name="height" value="744" />
+    <option name="x" value="-7" />
+    <option name="y" value="2" />
+    <option name="width" value="1932" />
+    <option name="height" value="1045" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -231,8 +281,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -295,6 +343,8 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -413,34 +463,35 @@
       <workItem from="1460770120972" duration="263000" />
       <workItem from="1460833497523" duration="5114000" />
       <workItem from="1460860908658" duration="4277000" />
+      <workItem from="1460931597009" duration="28437000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="52374000" />
+    <option name="totallyTimeSpent" value="80811000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-7" y="2" width="1932" height="1045" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18887262" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13461539" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="PHP-CGI Server" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.06940063" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.13722397" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16234498" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -455,17 +506,12 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="1" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/PHP/courses.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="10" selection-start-line="11" selection-start-column="10" selection-end-line="11" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/PHP/header.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
@@ -478,7 +524,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="14" column="47" selection-start-line="14" selection-start-column="47" selection-end-line="14" selection-end-column="47" />
-          <folding />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -503,9 +551,9 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
-            <marker date="1460919352919" expanded="true" signature="30639:30674" placeholder="..." />
-            <marker date="1460919352919" expanded="true" signature="30848:30864" placeholder="..." />
-            <marker date="1460919352919" expanded="true" signature="30955:30966" placeholder="..." />
+            <marker date="1461187495626" expanded="true" signature="30711:30746" placeholder="..." />
+            <marker date="1461187495626" expanded="true" signature="30920:30936" placeholder="..." />
+            <marker date="1461187495626" expanded="true" signature="31027:31038" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -544,7 +592,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="14" column="47" selection-start-line="14" selection-start-column="47" selection-end-line="14" selection-end-column="47" />
-          <folding />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -569,9 +619,9 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
-            <marker date="1460919352919" expanded="true" signature="30639:30674" placeholder="..." />
-            <marker date="1460919352919" expanded="true" signature="30848:30864" placeholder="..." />
-            <marker date="1460919352919" expanded="true" signature="30955:30966" placeholder="..." />
+            <marker date="1461187495626" expanded="true" signature="30711:30746" placeholder="..." />
+            <marker date="1461187495626" expanded="true" signature="30920:30936" placeholder="..." />
+            <marker date="1461187495626" expanded="true" signature="31027:31038" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -622,13 +672,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/PHP/menu.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="14" selection-start-line="17" selection-start-column="14" selection-end-line="17" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/PHP/DegreePlans/Information Technology.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
@@ -651,13 +694,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/PHP/CourseInfoGrabber.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PHP/courseinfo.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -700,22 +736,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/JS/DegreePlans/Test Degree.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/JS/DegreePlans/Computer_Science.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="6" selection-start-line="2" selection-start-column="2" selection-end-line="2" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/JS/info.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-714">
@@ -738,18 +758,7 @@
           <caret line="58" column="25" selection-start-line="58" selection-start-column="25" selection-end-line="58" selection-end-column="25" />
           <folding>
             <element signature="e#0#40#0" expanded="false" />
-            <marker date="1460768843936" expanded="true" signature="31414:31449" placeholder="..." />
-            <marker date="1460768843936" expanded="true" signature="31625:31641" placeholder="..." />
-            <marker date="1460768843936" expanded="true" signature="31736:31747" placeholder="..." />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/bootstrap-uncompressed.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="183">
-          <caret line="1535" column="45" selection-start-line="1535" selection-start-column="41" selection-end-line="1535" selection-end-column="45" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -757,14 +766,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="183">
           <caret line="114" column="88" selection-start-line="114" selection-start-column="81" selection-end-line="114" selection-end-column="88" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PHP/semesters.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="10" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="10" />
           <folding />
         </state>
       </provider>
@@ -777,64 +778,122 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/css/bootstrap-uncompressed.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-76561">
+          <caret line="1535" column="45" selection-start-line="1535" selection-start-column="41" selection-end-line="1535" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/PHP/courses.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="15" selection-start-line="4" selection-start-column="15" selection-end-line="4" selection-end-column="15" />
+        <state relative-caret-position="34">
+          <caret line="2" column="42" selection-start-line="2" selection-start-column="42" selection-end-line="2" selection-end-column="42" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/PHP/header.php">
+    <entry file="file://$PROJECT_DIR$/JS/DegreePlans/Computer_Science.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="36" column="9" selection-start-line="36" selection-start-column="9" selection-end-line="36" selection-end-column="9" />
+        <state relative-caret-position="34">
+          <caret line="2" column="6" selection-start-line="2" selection-start-column="2" selection-end-line="2" selection-end-column="11" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/PHP/index.php">
+    <entry file="file://$PROJECT_DIR$/JS/DegreePlans/Test Degree.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="35" selection-start-line="9" selection-start-column="35" selection-end-line="9" selection-end-column="35" />
+        <state relative-caret-position="51">
+          <caret line="3" column="15" selection-start-line="3" selection-start-column="15" selection-end-line="3" selection-end-column="15" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/normal.css">
+    <entry file="file://$PROJECT_DIR$/JS/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="799">
-          <caret line="47" column="27" selection-start-line="47" selection-start-column="27" selection-end-line="47" selection-end-column="27" />
+        <state relative-caret-position="102">
+          <caret line="6" column="1" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JS/Course.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="6" selection-start-line="16" selection-start-column="6" selection-end-line="16" selection-end-column="6" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/JS/CourseManager.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="35" selection-start-line="18" selection-start-column="35" selection-end-line="18" selection-end-column="35" />
+        <state relative-caret-position="119">
+          <caret line="7" column="68" selection-start-line="7" selection-start-column="68" selection-end-line="7" selection-end-column="68" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PHP/courseinfo.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="56" selection-start-line="6" selection-start-column="56" selection-end-line="6" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PHP/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="24" column="21" selection-start-line="24" selection-start-column="21" selection-end-line="24" selection-end-column="21" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/normal.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="93" column="15" selection-start-line="93" selection-start-column="15" selection-end-line="93" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PHP/semesters.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="583">
+          <caret line="66" column="29" selection-start-line="66" selection-start-column="29" selection-end-line="66" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PHP/header.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="524">
+          <caret line="49" column="12" selection-start-line="49" selection-start-column="12" selection-end-line="49" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PHP/menu.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="49" column="35" selection-start-line="49" selection-start-column="35" selection-end-line="49" selection-end-column="35" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/JS/info-uncompressed.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="796" column="47" selection-start-line="796" selection-start-column="47" selection-end-line="796" selection-end-column="47" />
+        <state relative-caret-position="298">
+          <caret line="1036" column="50" selection-start-line="1036" selection-start-column="50" selection-end-line="1036" selection-end-column="50" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
-            <marker date="1460919352919" expanded="true" signature="30639:30674" placeholder="..." />
-            <marker date="1460919352919" expanded="true" signature="30848:30864" placeholder="..." />
-            <marker date="1460919352919" expanded="true" signature="30955:30966" placeholder="..." />
+            <marker date="1461187495626" expanded="true" signature="30711:30746" placeholder="..." />
+            <marker date="1461187495626" expanded="true" signature="30920:30936" placeholder="..." />
+            <marker date="1461187495626" expanded="true" signature="31027:31038" placeholder="..." />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/JS/Course.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="18" selection-start-line="13" selection-start-column="18" selection-end-line="13" selection-end-column="18" />
-          <folding />
         </state>
       </provider>
     </entry>

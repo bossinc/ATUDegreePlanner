@@ -64,7 +64,7 @@
 	    <div class="col-sm-2 hidden-print" >	
 </div>
 </div>
-      <div id = 'sem666' style="display:none"></div>
+      <div id = 'courseHolder' style="display:none"></div>
 <script>
 for (var i = 0; i < 11; i++){
 	addSemester();
