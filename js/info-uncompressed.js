@@ -794,7 +794,7 @@ function addCourses() {
       stack: ".Courses"
     });
   });
-  for (var i = 0; cInitialCourseArray[i] != ""; i++){
+  for (var i = 1; cInitialCourseArray[i] != ""; i++){
     var theInfo = cInitialCourseArray[i];
     var msg = " <li class='Course Courses' id="+theInfo['name']+"></li>";
     $("#catAll").append(msg);
@@ -829,7 +829,7 @@ function addCourses() {
     thisCourse.prop("awesomeSemesterDisplay",asd);
     getCourseLocation(thisCourse);
   }
-  for (var i = 0; cInitialCourseArray[i] != ""; i++){
+  for (var i = 1; cInitialCourseArray[i] != ""; i++){
     var theInfo = cInitialCourseArray[i];
     var thisCourse = $("#"+cInitialCourseArray[i]['name']);
     //create 'display info' functionality
@@ -981,16 +981,32 @@ function sortCategories(){
 //Change degree plans
 function changeDegreePlan()
 {
-  var degreeList = document.getElementById("degreeList");
-  var dp = degreeList.options[degreeList.selectedIndex].text + ".js";
-  var imported = document.createElement('script');
-  imported.src = "../JS/DegreePlans/" + dp;
-  document.head.appendChild(imported);
-  for(var i =0; i < CourseElements.length; i++){
-    CourseElements[i].html("");
-    //CourseElements[i].prop();
+  paramBuilder = "";
+  var sel = document.getElementById("degreeList").value;
+  loadCourseArray(sel);
+  $("#catAll").empty();
+  for (var i = 0; i <= _semesterCounter; i++) {
+    var theSem = "#sem" + (i);
+    $(theSem).empty();
   }
-  CourseElements = new Array;
+
+  RunLoad();
+}
+
+function findDegreeArray(name)
+{
+  for(var i = 0; i < initialCourseArray.length; i++)
+  {
+    if(initialCourseArray[i][0]["name"] == name)
+    {
+      return initialCourseArray[i][1];
+    }
+  }
+}
+function loadCourseArray(semName)
+{
+  cInitialCourseArray = findDegreeArray(semName);
+  //document.writeln(initialCourseArray[0][0]);
 }
 
 var paramBuilder = "";
@@ -1062,14 +1078,26 @@ function unhashCode(s){
   return hash;
 }
 
+
 function InitStart()
 {
-    var src = "../JS/DegreePlans/Test%20Degree.js";
-    var oHead = document.getElementsByTagName('HEAD').item(0);
-    var oScript= document.createElement("script");
-    oScript.type = "text/javascript";
-    oScript.src=src ;
-    oHead.appendChild( oScript);
-    cInitialCourseArray = TestDegree;
-    RunLoad();
+  loadCourseArray("Computer_Science");
+  RunLoad();
+  //Test11();
+}
+
+function Test11()
+{
+  var theUrl = 'http://www.atu.edu/catalog/app/descriptions/catalog-data.php';
+  function loadDoc() {
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+      if (xhttp.readyState == 4 && xhttp.status == 200) {
+        document.getElementById("courseDescriptionBox").innerHTML = xhttp.responseText;
+      }
+    };
+    xhttp.open("POST", theUrl, true);
+    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhttp.send("term=201630&subject=COMS&number=1003");
+  }
 }

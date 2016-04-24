@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 	<title>ATU Degree Planner</title>
+	<script>var initialCourseArray = []; </script>
 	<link href="../css/bootstrap.css" rel="stylesheet" >
 	<link href="../css/normal.css" rel="stylesheet" type="text/css">
 	<link href="../css/print.css" rel="stylesheet" type="text/css" media="print" />
@@ -25,9 +26,6 @@
 </head>
 <body>
 <?php include 'header.php';?>
-<div style="float:right;">
-	<a>Computer Science 2013-2015</a></li>
-</div>
 <?php include 'menu.php';?>
 
 

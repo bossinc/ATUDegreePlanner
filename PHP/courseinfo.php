@@ -13,7 +13,7 @@
 <div class="row">
 <div class="col-sm-8">
 	    <div class="infoBlock" id="infobox">
-		<h5>No course currently selected.</h5>
+		<h5 id="courseDescriptionBox">No course currently selected.</h5>
 		</div>
 </div>
 <div class="col-sm-4">

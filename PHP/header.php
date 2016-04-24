@@ -1,7 +1,6 @@
 
 <?php
 	$submittedValue = "";
-	$value0 = "";
 	$directory = "../JS/";
 	$a = scandir($directory);
 	$a=drawArray(new DirectoryIterator("../JS/DegreePlans/")); 
@@ -14,6 +13,9 @@
 			if($object->isFile())
 			{
 				$result[]=$object->getBasename('.js');
+				echo "
+				    <script src=\"../JS/DegreePlans/" . $object . "\"></script>
+				";
 			}
     }
     return $result;
@@ -31,12 +33,8 @@
 <form name="DropDown">
 <div id="menu">
 <select id="degreeList" onChange="changeDegreePlan()">
-	<option> </option>
-	<script type="text/javascript">
-		resetButton();
-	</script>
   	<?php for($x = 0; $x < $arrlength; $x++){
-		echo "<option>";
+		echo "<option value=\"" . $a[$x] . "\">";
 		echo $a[$x];
 		echo "</option>";
 		}

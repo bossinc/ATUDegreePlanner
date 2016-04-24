@@ -1,5 +1,4 @@
-var initialCourseArray = new Array() 
- initialCourseArray =  [{"COURSE_ID":"ENGL 1013"},
+initialCourseArray.push([{"name":"Information_Technology"},[{"COURSE_ID":"ENGL 1013"},
 {"COURSE_ID":"ITITITITIT"},
 {"COURSE_ID":"MATH 2243"},
 {"COURSE_ID":"TECH 1001"},
@@ -43,4 +42,4 @@ var initialCourseArray = new Array()
 {"COURSE_ID":"COMS 4043"},
 {"COURSE_ID":"COMS 4063"},
 {"COURSE_ID":"ELEC_3_4"},
-"false"];
+"false"]]);

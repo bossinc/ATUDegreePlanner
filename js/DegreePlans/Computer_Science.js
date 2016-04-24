@@ -1,5 +1,5 @@
-var initialCourseArray = new Array() 
- initialCourseArray =  [{"COURSE_ID":"ENGL 1013"},
+ initialCourseArray.push([{"name":"Computer_Science"},
+[{"COURSE_ID":"ENGL 1013"},
 {"COURSE_ID":"CSCSCSCS"},
 {"COURSE_ID":"USHG1"},
 {"COURSE_ID":"TECH 1001","seasonRestrict":"n","hours":"1","Prereqs":"end","summer":"1","label":"TECH 1001","link":"https:\/\/www.atu.edu\/academics\/descriptions\/?subject=TECH&number=1001"},
@@ -42,4 +42,4 @@ var initialCourseArray = new Array()
 {"COURSE_ID":"MANAGE_ELEC","seasonRestrict":"n","hours":"3","Prereqs":"end","summer":"1","ULE":"2","label":"MGMT Elect","link":"https:\/\/www.atu.edu\/academics\/dev\/catalog\/graduation-requirements.html#GenEdRequirements"},
 {"COURSE_ID":"MATH_SCI_ELEC"},
 {"COURSE_ID":"UPPER_ELEC","seasonRestrict":"n","hours":"3","Prereqs":"end","summer":"1","ULE":"2","label":"Upper Level","link":"https:\/\/www.atu.edu\/academics\/catalog\/colleges\/applied_sciences\/dept_comp_info_sci.html#ComputerScience"},
-"false"];
+"false"]]);

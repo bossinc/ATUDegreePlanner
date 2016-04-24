@@ -38,7 +38,7 @@ $subst = "},\r\n";
 $json_string = preg_replace($re, $subst, $json_string);
 
 //additional formatting
-$first_string = "var initialCourseArray = new Array()";
+$first_string = "";
 $second_string = "initialCourseArray = ";
 
 // send $json_string contents to listed folder
