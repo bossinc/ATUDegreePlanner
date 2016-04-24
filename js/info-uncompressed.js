@@ -8,8 +8,9 @@ var theSeason = "Fall";
 var theYear = 2012;
 var HiddenSemestersArray = new Array;
 var ULElist = new Array;
+var cInitialCourseArray;
 var popup = 0;
-window.onload = RunLoad;
+window.onload = InitStart;
 
 function setPlanStatus(status)
 {
@@ -793,12 +794,12 @@ function addCourses() {
       stack: ".Courses"
     });
   });
-  for (var i = 0; initialCourseArray[i] != ""; i++){
-    var theInfo = initialCourseArray[i];
+  for (var i = 0; cInitialCourseArray[i] != ""; i++){
+    var theInfo = cInitialCourseArray[i];
     var msg = " <li class='Course Courses' id="+theInfo['name']+"></li>";
     $("#catAll").append(msg);
     //working here to add 'ors' to course prereqs, test phsx 313, then apply to others
-    var thisCourse = $("#"+initialCourseArray[i]['name']);
+    var thisCourse = $("#"+cInitialCourseArray[i]['name']);
     thisCourse.prop("label",(theInfo['label']));
     thisCourse.prop("hours",parseInt(theInfo['hours']));
     thisCourse.prop("summer",(theInfo['summer']));
@@ -827,9 +828,9 @@ function addCourses() {
     thisCourse.prop("awesomeSemesterDisplay",asd);
     getCourseLocation(thisCourse);
   }
-  for (var i = 0; initialCourseArray[i] != ""; i++){
-    var theInfo = initialCourseArray[i];
-    var thisCourse = $("#"+initialCourseArray[i]['name']);
+  for (var i = 0; cInitialCourseArray[i] != ""; i++){
+    var theInfo = cInitialCourseArray[i];
+    var thisCourse = $("#"+cInitialCourseArray[i]['name']);
     //create 'display info' functionality
     {
       updateDisplayInfo(thisCourse);
@@ -986,8 +987,7 @@ function sortCategories(){
 //Change degree plans
 function changeDegreePlan()
 {
-  generateSavingString();
- /* var degreeList = document.getElementById("degreeList");
+  var degreeList = document.getElementById("degreeList");
   var dp = degreeList.options[degreeList.selectedIndex].text + ".js";
   var imported = document.createElement('script');
   imported.src = "../JS/DegreePlans/" + dp;
@@ -996,9 +996,7 @@ function changeDegreePlan()
     CourseElements[i].html("");
     //CourseElements[i].prop();
   }
-  CourseElements = new Array;*/
-  //document.write("SDAF");
-  generateSavingString();
+  CourseElements = new Array;
 }
 
 var paramBuilder = "";
@@ -1068,4 +1066,16 @@ function unhashCode(s){
     //hash = hash & hash; // Convert to 32bit integer
   }
   return hash;
+}
+
+function InitStart()
+{
+    var src = "../JS/DegreePlans/Test%20Degree.js";
+    var oHead = document.getElementsByTagName('HEAD').item(0);
+    var oScript= document.createElement("script");
+    oScript.type = "text/javascript";
+    oScript.src=src ;
+    oHead.appendChild( oScript);
+    cInitialCourseArray = TestDegree;
+    RunLoad();
 }

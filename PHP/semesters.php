@@ -66,7 +66,7 @@
 </div>
       <div id = 'courseHolder' style="display:none"></div>
 <script>
-for (var i = 0; i < 11; i++){
+for (var i = 0; i < 12; i++){
 	addSemester();
 }
 updateSemesterDates();

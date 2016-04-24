@@ -1,5 +1,5 @@
 var initialCourseArray = new Array();
-initialCourseArray = [
+TestDegree = [
     {"name":"ENGL1013","seasonRestrict":"n","hours":"3","Prereqs":"end","summer":"1","ULE":"1","label":"ENGL 1013","link":"https:\/\/www.atu.edu\/academics\/descriptions\/?subject=ENGL&number=1013"},
     {"name":"TECH1001","seasonRestrict":"n","hours":"1","Prereqs":"end","summer":"1","label":"TECH 1001","link":"https:\/\/www.atu.edu\/academics\/descriptions\/?subject=TECH&number=1001"},
     {"name":"COMS1403","seasonRestrict":"n","hours":"3","Prereqs":"co|COMS1411|end","summer":"0","label":"COMS 1403","link":"https:\/\/www.atu.edu\/academics\/descriptions\/?subject=COMS&number=1403"},
