@@ -3,7 +3,7 @@
     <div class="modal-content">
       <div class="modal-header">
 	<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-	<h4 class="modal-title" id="instructionsModalLabel">ENGL 1023 - Composition II</h4>
+	<h4 class="modal-title" id="instructionsModalLabel">1023 - Composition II</h4>
       </div>
       <div class="modal-body">
 <ul>
@@ -341,7 +341,7 @@ SOC 1003 Introductory Sociology
       </div>
       <div class="modal-body">
 <ul>
-	<li>This required can be satisfied by taking an elective in either the 3000 or 4000 level of courses</li>
+	<li>This requirement can be satisfied by taking an elective in either the 3000 or 4000 level of courses</li>
 <br>
 </ul>
       </div>

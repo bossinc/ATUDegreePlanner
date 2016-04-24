@@ -549,7 +549,7 @@ function updateAllCourses() {
   applyPrintClass();
   checkStatus();
 }//end UpdateAllCourses
-//This is the message box that shows up on hover when theres an error
+//This is the message box that shows up on hover when there is an error
 function broadCastAll(){
   total_errors=0;
   broadCastOutOfSequence();
@@ -807,6 +807,7 @@ function addCourses() {
     thisCourse.prop("ULE",(theInfo['ULE']) );
     thisCourse.prop("seasonRestrict",(theInfo['seasonRestrict']) );
     thisCourse.prop("link",(theInfo['link']) );
+    thisCourse.prop("description",(theInfo['description']) );
     var asd = "";
     asd +=  '<div class="btn-group btn-group-xs pull-right">';
     if (thisCourse.prop('seasonRestrict') == 'f') {
@@ -859,13 +860,13 @@ function updateDisplayInfo(thisCourse){
   } else {
     msg += '<a href='+thisCourse.prop('link')+' title="Course Info" target="_blank">'+thisCourse.prop('label')+'</a>';
   }
-  msg += "</strong>";
   msg += "<div>";
   if (thisCourse.prop('hours') == 1) {
     msg += thisCourse.prop('hours') + " credit hour";
   } else {
     msg += thisCourse.prop('hours') + " credit hours";
   }
+  msg += "</strong>";
   msg += "</div>";
   msg += "</div>";
   msg += "<div class='col-sm-6'>";
@@ -877,23 +878,12 @@ function updateDisplayInfo(thisCourse){
   msg += "</div>";
   msg += "</div>";
   msg += "</div>";
-  msg += "<div class='row'>";
-  msg += "<div class='col-sm-12'>";
   msg += "<div>";
-  msg += '<span class="label label-default1 pull-left">';
-  if (thisCourse.prop("ULE") == 0 ){
-    msg += "Pre-ULE";
-  } else if (thisCourse.prop("ULE") == 1 ){
-    var name1 = thisCourse.prop('id');
-    var name2 = "#" + String(name1) + "_";
-    msg += '<a href='+name2+' data-toggle="modal" id="popuplink">Click for More Prerequisite Info</a>';
+  if (thisCourse.prop('description') == null) {
+    msg += "There is no description for this course."
+  } else {
+    msg += thisCourse.prop('description');
   }
-  else if (thisCourse.prop("ULE") == 2 ){
-    var name1 = thisCourse.prop('id');
-    var name2 = "#" + String(name1) + "_";
-    msg += '<a href='+name2+' data-toggle="modal" id="popuplink">Click for Requirements Information</a>';
-  }
-  msg += "</span>";
   msg+= (NewInfoDisplayPrereq(thisCourse));
   msg += "</div>";
   msg += "</div>";
@@ -912,6 +902,10 @@ function updateExtraDisplayInfo(thisCourse){
     msg += '<a href='+thisCourse.prop('link')+' title="Course Info" target="_blank">'+thisCourse.prop('label')+'</a>';
   }
   msg += "</strong>";
+  msg += "<div>";
+  if (thisCourse.prop('description') !== null){
+    msg += thisCourse.prop('description');
+  }
   msg += "<div>";
   if (thisCourse.prop('hours') == 1) {
     msg += thisCourse.prop('hours') + " credit hour";

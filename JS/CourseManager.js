@@ -2,10 +2,10 @@
 
 function CourseManager() {
     this.detailedClassesArray = initialCourseArray;
-    this.htmlClassesArry = [];
-    this.htmlClassesArry.push(new Course(initialCourseArray[0]));
-    this.htmlClassesArry.push(new Course(this.detailedClassesArray[1]));
-    this.htmlClassesArry.push(new Course(this.detailedClassesArray[2]));
+    this.htmlClassesArray = [];
+    this.htmlClassesArray.push(new Course(initialCourseArray[0]));
+    this.htmlClassesArray.push(new Course(this.detailedClassesArray[1]));
+    this.htmlClassesArray.push(new Course(this.detailedClassesArray[2]));
 }
 
 CourseManager.prototype.ChangeDegreePlan = function() {

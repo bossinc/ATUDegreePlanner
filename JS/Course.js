@@ -4,6 +4,7 @@ function Course(info){
     this.hours = info.hours;
     this.prereqs = info.Prereqs;
     this.label = info.label;
+    this.description = info.description;
     this.course = this.CreateCourse();
 };
 
@@ -19,6 +20,8 @@ Course.prototype.CreateCourse = function()
     $("#CourseCollection").append(listElement);
     ($("#"+this.id)).prop("label",(this.label));
 };
+
+
 
 Course.prototype.DragCourse = $(function() {
     var $drop = $( ".dropHere" );

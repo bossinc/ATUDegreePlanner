@@ -26,7 +26,7 @@
 ?>
 <img src="ATU.png" alt="ATU" style="width:470px;height:97px;">
 <h2>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspDegree Planner</h2><style>
-<!-- This is where the links to the top degree menus is located at-->
+<!-- This is where the links to the top degree menus are located at-->
 </style>
 <form name="DropDown">
 <div id="menu">
