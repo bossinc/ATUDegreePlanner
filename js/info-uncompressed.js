@@ -1122,8 +1122,9 @@ function InitStart()
 function xmlGrabber(thisCourse)
 {
   var course = thisCourse.prop('label');
-  //Document.writeln(course);
   var subject = course.substr(0,course.indexOf(' '));
+  if(subject.length != 4)
+      return "";
   var number = course.substr(course.indexOf(' ')+1);
   var rValue = "";
   var theUrl = 'http://www.atu.edu/catalog/app/descriptions/catalog-data.php';
