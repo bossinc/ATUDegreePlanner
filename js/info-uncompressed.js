@@ -879,11 +879,7 @@ function updateDisplayInfo(thisCourse){
   msg += "</div>";
   msg += "</div>";
   msg += "<div>";
-  if (thisCourse.prop('description') == null) {
-    msg += "There is no description for this course."
-  } else {
-    msg += thisCourse.prop('description');
-  }
+  msg += xmlGrabber(thisCourse);
   msg+= (NewInfoDisplayPrereq(thisCourse));
   msg += "</div>";
   msg += "</div>";
@@ -1103,18 +1099,23 @@ function InitStart()
   //Test11();
 }
 
-function Test11()
+function xmlGrabber(thisCourse)
 {
+  var course = thisCourse.prop('label');
+  var subject = course.substr(0,course.indexOf(' '));
+  var number = course.substr(course.indexOf(' ')+1);
+  var rValue = "";
   var theUrl = 'http://www.atu.edu/catalog/app/descriptions/catalog-data.php';
-  function loadDoc() {
-    var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function() {
-      if (xhttp.readyState == 4 && xhttp.status == 200) {
-        document.getElementById("courseDescriptionBox").innerHTML = xhttp.responseText;
-      }
-    };
-    xhttp.open("POST", theUrl, true);
-    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    xhttp.send("term=201630&subject=COMS&number=1003");
-  }
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (xhttp.readyState === 4 && xhttp.status === 200) {
+      rValue = xhttp.responseText;
+    }
+  };
+  xhttp.open("POST", theUrl, false);
+  xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  xhttp.send("term=201630&subject=" + subject + "&number=" + number);
+
+
+  return rValue;
 }
