@@ -1,4 +1,4 @@
-initialCourseArray.push([{"name":"Test Degree"}, [{"arrayname":"Test Degree"},
+initialCourseArray.push([{"name":"Test Degree"}, [
     {"name":"ENGL1013","seasonRestrict":"n","hours":"3","Prereqs":"end","summer":"1","ULE":"1","label":"ENGL 1013","link":"https:\/\/www.atu.edu\/academics\/descriptions\/?subject=ENGL&number=1013",
         "description":"A review of grammar, introduction to research methods, and practice in writing exposition using reading to provide ideas and patterns. <br /> <br /> Note: A grade of C or better must be earned in each of the two composition courses used to satisfy the general education requirement of English/Communication.<br /> <br /> Note: May not be taken for credit after successful completion of ENGL 1043."},
     {"name":"TECH1001","seasonRestrict":"n","hours":"1","Prereqs":"end","summer":"1","label":"TECH 1001","link":"https:\/\/www.atu.edu\/academics\/descriptions\/?subject=TECH&number=1001",

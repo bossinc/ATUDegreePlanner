@@ -5,7 +5,7 @@
 
 var _semesterCounter = 0;
 var theSeason = "Fall";
-var theYear = 2012;
+var theYear = 2016;
 var HiddenSemestersArray = new Array;
 var ULElist = new Array;
 var cInitialCourseArray;
@@ -436,10 +436,10 @@ function resetButton() {
 
   $(".Courses").prop("sem", 255);
 
-  while (_semesterCounter < 11) {
+  while (_semesterCounter < 12) {
     addSemester();
   }
-  while (_semesterCounter > 11) {
+  while (_semesterCounter > 12) {
     removeSemester();
   }
   $(".Course").each(function(index) {
@@ -794,7 +794,7 @@ function addCourses() {
       stack: ".Courses"
     });
   });
-  for (var i = 1; cInitialCourseArray[i] != ""; i++){
+  for (var i = 0; cInitialCourseArray[i] != ""; i++){
     var theInfo = cInitialCourseArray[i];
     var msg = " <li class='Course Courses' id="+theInfo['name']+"></li>";
     $("#catAll").append(msg);
@@ -805,7 +805,7 @@ function addCourses() {
     thisCourse.prop("summer",(theInfo['summer']));
     thisCourse.prop("Prereqs",(theInfo['Prereqs']).split('|') );
     thisCourse.prop("ULE",(theInfo['ULE']) );
-    thisCourse.prop("seasonRestrict",(theInfo['seasonRestrict']) );
+    thisCourse.prop("seasonRestrict",(theInfo['seasonRestrict']));
     thisCourse.prop("link",(theInfo['link']) );
     thisCourse.prop("description",(theInfo['description']) );
     var asd = "";
@@ -829,7 +829,7 @@ function addCourses() {
     thisCourse.prop("awesomeSemesterDisplay",asd);
     getCourseLocation(thisCourse);
   }
-  for (var i = 1; cInitialCourseArray[i] != ""; i++){
+  for (var i = 0; cInitialCourseArray[i] != ""; i++){
     var theInfo = cInitialCourseArray[i];
     var thisCourse = $("#"+cInitialCourseArray[i]['name']);
     //create 'display info' functionality
@@ -839,6 +839,7 @@ function addCourses() {
         var tempThisCourse = $(this);
         $("#infobox").html($(this).prop('displayInfo'));
         activatePreqReqButtons(tempThisCourse);
+        document.getElementById("CourseInfoText").innerHTML = xmlGrabber(tempThisCourse);
         $("button[name='course-btn']").prop("value",$(this).prop('id'));
         $("#hours_btn").attr("disabled","disabled");
         $("#hours_btn").hide();
@@ -879,7 +880,7 @@ function updateDisplayInfo(thisCourse){
   msg += "</div>";
   msg += "</div>";
   msg += "<div>";
-  msg += xmlGrabber(thisCourse);
+  msg += "<div id=\"CourseInfoText\"<p></p></div>";
   msg+= (NewInfoDisplayPrereq(thisCourse));
   msg += "</div>";
   msg += "</div>";
@@ -1100,7 +1101,7 @@ function InitStart()
   RunLoad();
 }
 
-<<<<<<< HEAD
+
 /*function Test11()
  {
  var rValue = "";
@@ -1117,10 +1118,11 @@ function InitStart()
 
  return rValue;
  }*/
-=======
+
 function xmlGrabber(thisCourse)
 {
   var course = thisCourse.prop('label');
+  //Document.writeln(course);
   var subject = course.substr(0,course.indexOf(' '));
   var number = course.substr(course.indexOf(' ')+1);
   var rValue = "";
@@ -1134,8 +1136,5 @@ function xmlGrabber(thisCourse)
   xhttp.open("POST", theUrl, false);
   xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
   xhttp.send("term=201630&subject=" + subject + "&number=" + number);
-
-
   return rValue;
 }
->>>>>>> 01646d474ee3d0be7e3f6b6dfafb6ea722b75e03
