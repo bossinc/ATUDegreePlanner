@@ -1005,6 +1005,7 @@ function findDegreeArray(name)
 }
 function loadCourseArray(semName)
 {
+  insertParam("Degree", semName);
   cInitialCourseArray = findDegreeArray(semName);
   //document.writeln(initialCourseArray[0][0]);
 }
@@ -1081,7 +1082,22 @@ function unhashCode(s){
 
 function InitStart()
 {
-  loadCourseArray("Computer_Science");
+  var degreePlan = "";
+  var kvp = document.location.search.substr(1).split('&');
+  var i = kvp.length;
+  var x;
+  while (i--) {
+    x = kvp[i].split('=');
+
+    if (x[0] == 'Degree') {
+      degreePlan = decodeURI(x[1]);
+      break;
+    }
+  }
+  if(degreePlan == "")
+    loadCourseArray("Computer_Science");
+  else
+      loadCourseArray(degreePlan);
   RunLoad();
   //Test11();
 }
