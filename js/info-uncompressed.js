@@ -990,6 +990,7 @@ function changeDegreePlan()
     $(theSem).empty();
   }
 
+  resetButton();
   RunLoad();
 }
 

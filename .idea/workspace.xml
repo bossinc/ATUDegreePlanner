@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fb7d599f-c580-4bca-a883-9e7a8cd46f6d" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JS/info-uncompressed.js" afterPath="$PROJECT_DIR$/JS/info-uncompressed.js" />
     </list>
     <ignored path="ATUDegreePlanner.iws" />
@@ -30,13 +29,13 @@
           <file leaf-file-name="info-uncompressed.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/JS/info-uncompressed.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1548">
-                  <caret line="1090" column="0" selection-start-line="1090" selection-start-column="0" selection-end-line="1090" selection-end-column="0" />
+                <state relative-caret-position="392">
+                  <caret line="992" column="16" selection-start-line="992" selection-start-column="16" selection-end-line="992" selection-end-column="16" />
                   <folding>
                     <element signature="n#!!doc" expanded="true" />
-                    <marker date="1461636650231" expanded="true" signature="30410:30445" placeholder="..." />
-                    <marker date="1461636650231" expanded="true" signature="30619:30635" placeholder="..." />
-                    <marker date="1461636650231" expanded="true" signature="30726:30737" placeholder="..." />
+                    <marker date="1461637297212" expanded="true" signature="30410:30445" placeholder="..." />
+                    <marker date="1461637297212" expanded="true" signature="30619:30635" placeholder="..." />
+                    <marker date="1461637297212" expanded="true" signature="30726:30737" placeholder="..." />
                   </folding>
                 </state>
               </provider>
@@ -111,13 +110,13 @@
           <file leaf-file-name="info-uncompressed.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/JS/info-uncompressed.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="347">
-                  <caret line="182" column="16" selection-start-line="182" selection-start-column="16" selection-end-line="182" selection-end-column="16" />
+                <state relative-caret-position="382">
+                  <caret line="160" column="4" selection-start-line="160" selection-start-column="4" selection-end-line="160" selection-end-column="18" />
                   <folding>
                     <element signature="n#!!doc" expanded="true" />
-                    <marker date="1461636650231" expanded="true" signature="30410:30445" placeholder="..." />
-                    <marker date="1461636650231" expanded="true" signature="30619:30635" placeholder="..." />
-                    <marker date="1461636650231" expanded="true" signature="30726:30737" placeholder="..." />
+                    <marker date="1461637297212" expanded="true" signature="30410:30445" placeholder="..." />
+                    <marker date="1461637297212" expanded="true" signature="30619:30635" placeholder="..." />
+                    <marker date="1461637297212" expanded="true" signature="30726:30737" placeholder="..." />
                   </folding>
                 </state>
               </provider>
@@ -473,12 +472,12 @@
       <workItem from="1460931597009" duration="28437000" />
       <workItem from="1461508334453" duration="18690000" />
       <workItem from="1461608071888" duration="2484000" />
-      <workItem from="1461634457597" duration="1868000" />
+      <workItem from="1461634457597" duration="2514000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="103853000" />
+    <option name="totallyTimeSpent" value="104499000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -582,9 +581,9 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
-            <marker date="1461636650231" expanded="true" signature="30410:30445" placeholder="..." />
-            <marker date="1461636650231" expanded="true" signature="30619:30635" placeholder="..." />
-            <marker date="1461636650231" expanded="true" signature="30726:30737" placeholder="..." />
+            <marker date="1461637297212" expanded="true" signature="30410:30445" placeholder="..." />
+            <marker date="1461637297212" expanded="true" signature="30619:30635" placeholder="..." />
+            <marker date="1461637297212" expanded="true" signature="30726:30737" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -885,13 +884,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/JS/info-uncompressed.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1548">
-          <caret line="1090" column="0" selection-start-line="1090" selection-start-column="0" selection-end-line="1090" selection-end-column="0" />
+        <state relative-caret-position="392">
+          <caret line="992" column="16" selection-start-line="992" selection-start-column="16" selection-end-line="992" selection-end-column="16" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
-            <marker date="1461636650231" expanded="true" signature="30410:30445" placeholder="..." />
-            <marker date="1461636650231" expanded="true" signature="30619:30635" placeholder="..." />
-            <marker date="1461636650231" expanded="true" signature="30726:30737" placeholder="..." />
+            <marker date="1461637297212" expanded="true" signature="30410:30445" placeholder="..." />
+            <marker date="1461637297212" expanded="true" signature="30619:30635" placeholder="..." />
+            <marker date="1461637297212" expanded="true" signature="30726:30737" placeholder="..." />
           </folding>
         </state>
       </provider>
