@@ -1097,24 +1097,26 @@ function InitStart()
   }
   if(degreePlan == "")
     loadCourseArray("Computer_Science");
-  else
-      loadCourseArray(degreePlan);
+  else {
+    loadCourseArray(degreePlan);
+    document.getElementById("degreeList").value = degreePlan;
+  }
   RunLoad();
-  //Test11();
 }
 
-function Test11()
-{
-  var theUrl = 'http://www.atu.edu/catalog/app/descriptions/catalog-data.php';
-  function loadDoc() {
-    var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function() {
-      if (xhttp.readyState == 4 && xhttp.status == 200) {
-        document.getElementById("courseDescriptionBox").innerHTML = xhttp.responseText;
-      }
-    };
-    xhttp.open("POST", theUrl, true);
-    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    xhttp.send("term=201630&subject=COMS&number=1003");
-  }
-}
+/*function Test11()
+ {
+ var rValue = "";
+ var theUrl = 'http://www.atu.edu/catalog/app/descriptions/catalog-data.php';
+ var xhttp = new XMLHttpRequest();
+ xhttp.onreadystatechange = function() {
+ if (xhttp.readyState == 4 && xhttp.status == 200) {
+ rValue = xhttp.responseText;
+ }
+ };
+ xhttp.open("POST", theUrl, false);
+ xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+ xhttp.send("term=201630&subject=COMS&number=1003");
+
+ return rValue;
+ }*/
