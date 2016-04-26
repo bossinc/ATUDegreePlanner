@@ -1,7 +1,6 @@
 
 <?php
 	$submittedValue = "";
-	$value0 = "";
 	$directory = "../JS/";
 	$a = scandir($directory);
 	$a=drawArray(new DirectoryIterator("../JS/DegreePlans/")); 
@@ -14,6 +13,9 @@
 			if($object->isFile())
 			{
 				$result[]=$object->getBasename('.js');
+				echo "
+				    <script src=\"../JS/DegreePlans/" . $object . "\"></script>
+				";
 			}
     }
     return $result;
@@ -26,17 +28,13 @@
 ?>
 <img src="ATU.png" alt="ATU" style="width:470px;height:97px;">
 <h2>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspDegree Planner</h2><style>
-<!-- This is where the links to the top degree menus is located at-->
+<!-- This is where the links to the top degree menus are located at-->
 </style>
 <form name="DropDown">
 <div id="menu">
 <select id="degreeList" onChange="changeDegreePlan()">
-	<option> </option>
-	<script type="text/javascript">
-		resetButton();
-	</script>
   	<?php for($x = 0; $x < $arrlength; $x++){
-		echo "<option>";
+		echo "<option value=\"" . $a[$x] . "\">";
 		echo $a[$x];
 		echo "</option>";
 		}
@@ -46,6 +44,7 @@
 
 
   <li><a id ="Instructions" href="#instructionsModal" data-toggle="modal">Help</a></li> 
-  <a href="#wipePlanModal" data-toggle="modal">Reset plan to default</a>
+  <a href="#wipePlanModal" data-toggle="modal">Reset</a>
+  <a href="#savePlanModal" data-toggle="modal">Save</a>
 </div>
 </form>

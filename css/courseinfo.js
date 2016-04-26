@@ -1,0 +1,1 @@
+<script type="text/javascript" src="url_to_your_php_file.php" /></script>
