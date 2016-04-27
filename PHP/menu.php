@@ -43,6 +43,29 @@
   </div>
 </div>
 
+<!-- This is where to dialog for the Label option is located at-->
+<div class="modal fade" id="labelsModel" tabindex="-1" role="dialog" aria-labelledby="labelsModelLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+	<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+	<h4 class="modal-title" id="labelsModelLabel">What do different colors represent? </h4>
+      </div>
+      <div class="modal-body">
+
+<ul>
+	<li>When a course is been dragged to a semester, it will either be green or red.</li>
+	<li>*Green: You are good to go. </li>
+	<li>*Red: You miss either a pre-requisition or a co-requisition for this course. </li>
+	<li>Please refer to the User Documentation for more questions</li>
+</ul>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
 
 <!-- This is where the dialog for the save option is located at-->
 <div class="modal fade" id="savePlanModal" tabindex="-1" role="dialog" aria-labelledby="wipePlanModalLabel" aria-hidden="true">
@@ -53,7 +76,10 @@
                 <h4 class="modal-title" id="wipePlanModalLabel">Save</h4>
             </div>
             <div class="modal-body">
-                <p></p>
+                <ul>
+				<li>By click yes, you are about to save your current plan into an URL.</li>
+				<li>Please save the URL so you can come back to the current setting any time.</li>
+				</ul>
 
             </div>
             <div class="modal-footer">
