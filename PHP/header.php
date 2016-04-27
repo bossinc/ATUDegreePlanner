@@ -43,7 +43,9 @@
 </select>
 
 
-  <li><a id ="Instructions" href="#instructionsModal" data-toggle="modal">Help</a></li> 
+  <li>
+  <a id ="Instructions" href="#instructionsModal" data-toggle="modal">Help</a></li> 
+  <a id ="Labels" href="#labelsModel" data-toggle="modal">Label</a>
   <a href="#wipePlanModal" data-toggle="modal">Reset</a>
   <a href="#savePlanModal" data-toggle="modal">Save</a>
 </div>
