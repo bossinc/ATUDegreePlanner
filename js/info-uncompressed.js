@@ -1045,7 +1045,7 @@ function generateSavingString()
   //document.location.search = paramBuilder;
 }
 
-function hashCode (s) {
+function encodeURLParam (s) {
   var hash = 0,
       strlen = s.length,
       i,
@@ -1061,7 +1061,7 @@ function hashCode (s) {
   return hash;
 }
 
-function unhashCode(s){
+function decodeURLParam(s){
   var hash = 0,
       strlen = s.length,
       i,
